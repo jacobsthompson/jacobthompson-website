@@ -1,0 +1,11 @@
+.side-panel-container {
+    display: flex;
+    position: relative;
+    align-items: center;
+
+    width: 50%;
+    height: 50%;
+    /*border: 2px solid #fff;*/
+    margin: auto;
+    z-index: 4;
+}

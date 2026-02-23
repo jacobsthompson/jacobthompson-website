@@ -1,0 +1,38 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+}
+
+
+.App {
+    width: 100vw;
+    height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    text-align: center;
+    color: white;
+    font-size: calc(10px + 2vmin);
+}
+
+.center-content-container {
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    align-items: center;
+}
+
+
+.galaxy-outline {
+  width: 500px;
+  height: 500px;
+  background-color: red;
+  border-radius: 50%;
+}
