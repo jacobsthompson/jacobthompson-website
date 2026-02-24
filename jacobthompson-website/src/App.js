@@ -3,17 +3,17 @@ import Galaxy from "./javascripts/Galaxy";
 import Stars from "./javascripts/Stars";
 import Header from "./javascripts/Header";
 import SidePanel from "./javascripts/SidePanel";
+import Planets from "./javascripts/Planet";
 
 function App() {
     return (
         <div className="App">
             <Header/>
             <div className="center-content-container">
-                <SidePanel side={'left'} text={'hello'}/>
                 <Galaxy/>
-                <SidePanel side={'right'} text={'welcome'}/>
+                <Planets/>
             </div>
-            <Stars count={150}/>
+            <Stars count={500}/>
         </div>
     );
 }

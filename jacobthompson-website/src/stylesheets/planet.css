@@ -1,0 +1,47 @@
+.planets-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: scaleY(0.5) skewX(-15deg);
+    z-index: 10;
+}
+
+.planet-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+}
+
+.center-of-gravity {
+    position: absolute;
+}
+
+.planet {
+    width: 100px;
+    height: 100px;
+    transition: transform 0.3s ease;
+}
+
+.planet-image {
+    width: 100%;
+    height: 100%;
+    filter: invert(100%);
+}
+
+.planet:hover {
+   transform: scale(1.25);
+}
+
+
+
+@keyframes orbit {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+
+@keyframes orbit-counter {
+  from { transform: rotate(0deg) skewX(15deg) scaleY(2); }
+  to   { transform: rotate(-360deg) skewX(15deg) scaleY(2); }
+}

@@ -24,12 +24,12 @@ export default function Stars({ count = 150 }) {
         left: `${Math.random() * 100}%`,
         size: Math.random() > 0.8 ? 4 : 2, // mostly 2px, some 4px
         delay: `${Math.random() * 6}s`,
-        duration: `${(1.5 + Math.random()) * 10}s`,
+        duration: `${(1 + Math.random()) * 10}s`,
         isSpecial: Math.random() < 0.1,
     }));
 
     return (
-    <div>
+    <div style={{zIndex: 1}}>
       {stars.map(star => (
         <div
           key={star.id}
@@ -37,7 +37,7 @@ export default function Stars({ count = 150 }) {
             position: 'absolute',
             top: star.top,
             left: star.left,
-            animation: `twinkle ${star.duration} linear ${star.delay} infinite`,
+            animation: `twinkle ${star.duration} linear ${star.delay} infinite backwards`,
           }}
         >
             {star.isSpecial ? <SpecialStar size={star.size}/> : <div style={{ width: star.size, height: star.size, background: '#fff' }}/> }

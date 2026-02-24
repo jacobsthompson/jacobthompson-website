@@ -1,7 +1,7 @@
 .galaxy-container {
   width: 500px;
   height: 500px;
-  transform: scaleY(0.35) skewX(-30deg) rotate(0deg);
+  transform: scaleY(0.35) skewX(-30deg);
   z-index: 5;
   justify-self: center;
 }
@@ -9,6 +9,7 @@
 .galaxies {
     width: 500px;
     height: 500px;
+    z-index: 5;
   }
 
 .galaxy {
