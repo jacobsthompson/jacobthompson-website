@@ -26,7 +26,7 @@ export default function Galaxy(){
         <div className="galaxy-container">
             <div className="galaxies">
                 {galaxyFrames.map((frame, i) => (
-                    <img className="galaxy" key={i} src={frame} alt={i} style={{animationDelay: `-${(i / galaxyFrames.length) * duration}s`}}/>
+                    <img className="galaxy" key={i} src={frame} alt={''} style={{animationDelay: `-${(i / galaxyFrames.length) * duration}s`}}/>
                 ))}
             </div>
         </div>

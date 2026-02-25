@@ -1,11 +1,10 @@
 .header-container {
-    position: absolute;
+    display: flex;
     width: 20rem;
     height: 6rem;
     background-color: #0a0a0a;
-    margin: 2rem 0 0 0;
-    z-index: 5;
-    justify-content: center;
+    margin: 1rem auto 1rem auto;
+    z-index: 10;
 }
 
 .header {

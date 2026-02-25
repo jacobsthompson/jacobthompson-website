@@ -1,8 +1,9 @@
 .planets-container {
+    display: flex;
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: scaleY(0.5) skewX(-15deg);
+    transform: scaleY(0.5);
     z-index: 10;
 }
 
@@ -18,10 +19,17 @@
     position: absolute;
 }
 
-.planet {
-    width: 100px;
-    height: 100px;
+.planet-wrapper {
+    position: absolute;
+    width: 90px;
+    height: 90px;
     transition: transform 0.3s ease;
+}
+
+.planet {
+    transform: rotate(0deg) scaleY(2);
+    background-color: #0a0a0a;
+    border-radius: 50%;
 }
 
 .planet-image {
@@ -30,8 +38,24 @@
     filter: invert(100%);
 }
 
-.planet:hover {
+.planet-label {
+    position: relative;
+    white-space: nowrap;
+    text-align: center;
+    justify-self: center;
+    animation: text-fadeOut 0.3s forwards;
+}
+
+.planet-wrapper:hover {
    transform: scale(1.25);
+}
+
+.planet-wrapper:hover .planet-image {
+    filter: invert(1) sepia(1) saturate(100) hue-rotate(35deg);
+}
+
+.planet-wrapper:hover .planet-label{
+    animation: text-fadeIn 0.3s forwards;
 }
 
 
@@ -42,6 +66,16 @@
 }
 
 @keyframes orbit-counter {
-  from { transform: rotate(0deg) skewX(15deg) scaleY(2); }
-  to   { transform: rotate(-360deg) skewX(15deg) scaleY(2); }
+  from { transform: rotate(0deg) scaleY(2); }
+  to   { transform: rotate(-360deg) scaleY(2); }
+}
+
+@keyframes text-fadeIn {
+    from { opacity: 0; font-size: 0; }
+    to { opacity: 1; font-size: 1rem; }
+}
+
+@keyframes text-fadeOut {
+    from { opacity: 1; font-size: 1rem; }
+    to { opacity: 0; font-size: 0; }
 }

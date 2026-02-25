@@ -24,7 +24,7 @@ export default function Stars({ count = 150 }) {
         left: `${Math.random() * 100}%`,
         size: Math.random() > 0.8 ? 4 : 2, // mostly 2px, some 4px
         delay: `${Math.random() * 6}s`,
-        duration: `${(1 + Math.random()) * 10}s`,
+        duration: `${(1 + Math.random()) * 7}s`,
         isSpecial: Math.random() < 0.1,
     }));
 
