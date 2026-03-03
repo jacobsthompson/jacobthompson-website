@@ -2,7 +2,6 @@ import '../stylesheets/stars.css';
 
 function SpecialStar({size}){
     const px = size/2;
-    const gap = px/2;
     return (
     <div style={{ position: 'relative', width: px * 5, height: px * 5 }}>
         <div style={{ position: 'absolute', top: 0, left: px * 2, width: px, height: px, background: '#555' }} />
