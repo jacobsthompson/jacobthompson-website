@@ -1,5 +1,6 @@
 .header-container {
     display: flex;
+    flex-direction: column;
     width: 20rem;
     height: 6rem;
     background-color: #0a0a0a;
@@ -48,4 +49,25 @@
     font-size: 1.25rem;
     font-weight: normal;
     color: #fff;
+}
+
+.icons-wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    padding-top: 1.5rem;
+}
+
+.icon {
+    width: 1.5rem;
+    height: 1.5rem;
+    transition: transform 0.2s ease;
+}
+
+.icon:hover {
+    transform: scale(1.25);
+    filter: sepia(1) saturate(100) hue-rotate(40deg);
+    cursor: pointer;
 }

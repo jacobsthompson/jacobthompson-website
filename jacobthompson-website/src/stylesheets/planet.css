@@ -43,20 +43,13 @@
     transition: transform 0.4s ease;
 }
 
-.planet-card-wrapper {
-   animation: fadeIn 0.4s ease forwards;
-}
-
 .planet-wrapper:hover .planet-image{
-   transform: scale(1.25);
-}
-
-.planet-wrapper:hover .planet-image {
+    transform: scale(1.25);
     filter: invert(1) sepia(1) saturate(100) hue-rotate(40deg);
 }
 
-.planet-wrapper:hover .planet-label{
-    animation: text-fadeIn 0.3s forwards;
+.planet-card-wrapper {
+   animation: fadeIn 0.4s ease forwards;
 }
 
 .planet-wrapper:hover .planet-card-wrapper {

@@ -18,12 +18,12 @@
     top: 0;
     left: 0;
 
-    mask-image: url("../../public/assets/Galaxy.png");
+    mask-image: url("../../public/assets/galaxy/Galaxy.png");
     mask-size: cover;
     mask-repeat: no-repeat;
     mask-position: center;
 
-    -webkit-mask-image: url("../../public/assets/Galaxy.png");
+    -webkit-mask-image: url("../../public/assets/galaxy/Galaxy.png");
     -webkit-mask-size: cover;
     -webkit-mask-repeat: no-repeat;
     -webkit-mask-position: center;
@@ -48,7 +48,7 @@
     top: 0;
     left: 0;
 
-    background-image: url("../../public/assets/galaxy-background.png");
+    background-image: url("../../public/assets/galaxy/galaxy-background.png");
     background-size: cover;
     background-position: center;
     filter: invert(100%);
