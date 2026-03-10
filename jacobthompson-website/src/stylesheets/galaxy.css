@@ -52,6 +52,7 @@
     background-size: cover;
     background-position: center;
     filter: invert(100%);
+    image-rendering: crisp-edges;
 
     animation: shake 1s linear infinite;
 }

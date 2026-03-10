@@ -46,6 +46,7 @@
 .planet-wrapper:hover .planet-image{
     transform: scale(1.25);
     filter: invert(1) sepia(1) saturate(100) hue-rotate(40deg);
+    cursor: pointer;
 }
 
 .planet-card-wrapper {
