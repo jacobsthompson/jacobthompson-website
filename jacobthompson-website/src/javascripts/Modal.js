@@ -99,6 +99,10 @@ function ModalContent({src, toggleModal}){
     const srcYear = src[3];
     const srcLink = src[4];
 
+    const [openShowcase, setOpenShowcase] = useState(false);
+    const [showcaseImages, setShowcaseImages] = useState(null);
+    const [showcaseTitle, setShowcaseTitle] = useState("");
+
     switch (srcTitle){
         case 'A Digital Duck':
             return (
@@ -111,10 +115,6 @@ function ModalContent({src, toggleModal}){
                 </>
             );
         case 'UC Merced':
-            const [openShowcase, setOpenShowcase] = useState(false);
-            const [showcaseImages, setShowcaseImages] = useState(null);
-            const [showcaseTitle, setShowcaseTitle] = useState("");
-
             const handleOpenShowcase = (images, title) => {
                 setOpenShowcase(!openShowcase);
                 setShowcaseImages(images);

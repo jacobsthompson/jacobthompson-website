@@ -48,7 +48,7 @@ export default function MainPage() {
     const [toggleModal, setToggleModal] = useState(false);
     const [modalSrc, setModalSrc] = useState(null);
 
-    const scale = calculatePageScale();
+    const [scale, setScale] = useState(calculatePageScale());
 
     const handleToggleModal = (src) => {
         setToggleModal(!toggleModal);
