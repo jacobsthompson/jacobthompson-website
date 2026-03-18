@@ -34,75 +34,75 @@ export const SocialMedia = [
     "assets/graphic-work/uc-merced-work/social-media/movein.jpg",
     // Welcome To UC Merced
     [
-        "assets/graphic-work/uc-merced-work/social-media/welcome/welcome-1.png",
-        "assets/graphic-work/uc-merced-work/social-media/welcome/welcome-2.png",
-        "assets/graphic-work/uc-merced-work/social-media/welcome/welcome-3.png",
-        "assets/graphic-work/uc-merced-work/social-media/welcome/welcome-4.png",
+        "assets/graphic-work/uc-merced-work/social-media/welcome/welcome-1.jpg",
+        "assets/graphic-work/uc-merced-work/social-media/welcome/welcome-2.jpg",
+        "assets/graphic-work/uc-merced-work/social-media/welcome/welcome-3.jpg",
+        "assets/graphic-work/uc-merced-work/social-media/welcome/welcome-4.jpg",
     ],
-    "assets/graphic-work/uc-merced-work/social-media/yosemite.png",
+    "assets/graphic-work/uc-merced-work/social-media/yosemite.jpg",
     // Bobcat Day
     [
-        "assets/graphic-work/uc-merced-work/social-media/bd/bd-1.png",
-        "assets/graphic-work/uc-merced-work/social-media/bd/bd-2.png"
+        "assets/graphic-work/uc-merced-work/social-media/bd/bd-1.jpg",
+        "assets/graphic-work/uc-merced-work/social-media/bd/bd-2.jpg"
     ],
-    "assets/graphic-work/uc-merced-work/social-media/awards.png",
-    "assets/graphic-work/uc-merced-work/social-media/water-polo.png",
-    "assets/graphic-work/uc-merced-work/social-media/job-post.png",
-    "assets/graphic-work/uc-merced-work/social-media/experience/bobcatday.png",
+    "assets/graphic-work/uc-merced-work/social-media/awards.jpg",
+    "assets/graphic-work/uc-merced-work/social-media/water-polo.jpg",
+    "assets/graphic-work/uc-merced-work/social-media/job-post.jpg",
+    "assets/graphic-work/uc-merced-work/social-media/experience/bobcatday.jpg",
     // Experience UC Merced
     [
-        "assets/graphic-work/uc-merced-work/social-media/experience/experience-1.png",
-        "assets/graphic-work/uc-merced-work/social-media/experience/experience-2.png",
-        "assets/graphic-work/uc-merced-work/social-media/experience/experience-3.png",
-        "assets/graphic-work/uc-merced-work/social-media/experience/journey.png"
+        "assets/graphic-work/uc-merced-work/social-media/experience/experience-1.jpg",
+        "assets/graphic-work/uc-merced-work/social-media/experience/experience-2.jpg",
+        "assets/graphic-work/uc-merced-work/social-media/experience/experience-3.jpg",
+        "assets/graphic-work/uc-merced-work/social-media/experience/journey.jpg"
     ],
     // Living Tips
     [
-        "assets/graphic-work/uc-merced-work/social-media/living-tips/livingtips-1.png",
-        "assets/graphic-work/uc-merced-work/social-media/living-tips/livingtips-2.png",
-        "assets/graphic-work/uc-merced-work/social-media/living-tips/livingtips-3.png",
-        "assets/graphic-work/uc-merced-work/social-media/living-tips/livingtips-4.png",
-        "assets/graphic-work/uc-merced-work/social-media/living-tips/livingtips-5.png",
-        "assets/graphic-work/uc-merced-work/social-media/living-tips/livingtips-6.png"
+        "assets/graphic-work/uc-merced-work/social-media/living-tips/livingtips-1.jpg",
+        "assets/graphic-work/uc-merced-work/social-media/living-tips/livingtips-2.jpg",
+        "assets/graphic-work/uc-merced-work/social-media/living-tips/livingtips-3.jpg",
+        "assets/graphic-work/uc-merced-work/social-media/living-tips/livingtips-4.jpg",
+        "assets/graphic-work/uc-merced-work/social-media/living-tips/livingtips-5.jpg",
+        "assets/graphic-work/uc-merced-work/social-media/living-tips/livingtips-6.jpg"
     ],
     // Summer At UC Merced
     [
-        "assets/graphic-work/uc-merced-work/social-media/summer/summer-1.png",
-        "assets/graphic-work/uc-merced-work/social-media/summer/summer-2.png",
-        "assets/graphic-work/uc-merced-work/social-media/summer/summer-3.png",
-        "assets/graphic-work/uc-merced-work/social-media/summer/summer-4.png",
-        "assets/graphic-work/uc-merced-work/social-media/summer/summer-5.png",
-        "assets/graphic-work/uc-merced-work/social-media/summer/summer-6.png",
-        "assets/graphic-work/uc-merced-work/social-media/summer/summer-7.png"
+        "assets/graphic-work/uc-merced-work/social-media/summer/summer-1.jpg",
+        "assets/graphic-work/uc-merced-work/social-media/summer/summer-2.jpg",
+        "assets/graphic-work/uc-merced-work/social-media/summer/summer-3.jpg",
+        "assets/graphic-work/uc-merced-work/social-media/summer/summer-4.jpg",
+        "assets/graphic-work/uc-merced-work/social-media/summer/summer-5.jpg",
+        "assets/graphic-work/uc-merced-work/social-media/summer/summer-6.jpg",
+        "assets/graphic-work/uc-merced-work/social-media/summer/summer-7.jpg"
     ],
-    "assets/graphic-work/uc-merced-work/social-media/fresno.png",
+    "assets/graphic-work/uc-merced-work/social-media/fresno.jpg",
         // Pass The paw
     [
-        "assets/graphic-work/uc-merced-work/social-media/ptp/ptp-1.png",
-        "assets/graphic-work/uc-merced-work/social-media/ptp/ptp-2.png",
-        "assets/graphic-work/uc-merced-work/social-media/ptp/ptp-3.png",
-        "assets/graphic-work/uc-merced-work/social-media/ptp/ptp-4.png",
-        "assets/graphic-work/uc-merced-work/social-media/ptp/ptp-5.png",
-        "assets/graphic-work/uc-merced-work/social-media/ptp/ptp-6.png"
+        "assets/graphic-work/uc-merced-work/social-media/ptp/ptp-1.jpg",
+        "assets/graphic-work/uc-merced-work/social-media/ptp/ptp-2.jpg",
+        "assets/graphic-work/uc-merced-work/social-media/ptp/ptp-3.jpg",
+        "assets/graphic-work/uc-merced-work/social-media/ptp/ptp-4.jpg",
+        "assets/graphic-work/uc-merced-work/social-media/ptp/ptp-5.jpg",
+        "assets/graphic-work/uc-merced-work/social-media/ptp/ptp-6.jpg"
     ],
     // Valentines
     [
-        "assets/graphic-work/uc-merced-work/social-media/valentines/valentines-1.png",
-        "assets/graphic-work/uc-merced-work/social-media/valentines/valentines-2.png",
-        "assets/graphic-work/uc-merced-work/social-media/valentines/valentines-3.png",
-        "assets/graphic-work/uc-merced-work/social-media/valentines/valentines-4.png",
-        "assets/graphic-work/uc-merced-work/social-media/valentines/valentines-5.png",
-        "assets/graphic-work/uc-merced-work/social-media/valentines/valentines-6.png",
-        "assets/graphic-work/uc-merced-work/social-media/valentines/valentines-7.png",
-        "assets/graphic-work/uc-merced-work/social-media/valentines/valentines-8.png",
-        "assets/graphic-work/uc-merced-work/social-media/valentines/valentines-9.png"
+        "assets/graphic-work/uc-merced-work/social-media/valentines/valentines-1.jpg",
+        "assets/graphic-work/uc-merced-work/social-media/valentines/valentines-2.jpg",
+        "assets/graphic-work/uc-merced-work/social-media/valentines/valentines-3.jpg",
+        "assets/graphic-work/uc-merced-work/social-media/valentines/valentines-4.jpg",
+        "assets/graphic-work/uc-merced-work/social-media/valentines/valentines-5.jpg",
+        "assets/graphic-work/uc-merced-work/social-media/valentines/valentines-6.jpg",
+        "assets/graphic-work/uc-merced-work/social-media/valentines/valentines-7.jpg",
+        "assets/graphic-work/uc-merced-work/social-media/valentines/valentines-8.jpg",
+        "assets/graphic-work/uc-merced-work/social-media/valentines/valentines-9.jpg"
     ],
         // Thanksgiving
     [
-        "assets/graphic-work/uc-merced-work/social-media/thanksgiving/thanksgiving-1.png",
-        "assets/graphic-work/uc-merced-work/social-media/thanksgiving/thanksgiving-2.png",
-        "assets/graphic-work/uc-merced-work/social-media/thanksgiving/thanksgiving-3.png",
-        "assets/graphic-work/uc-merced-work/social-media/thanksgiving/thanksgiving-4.png",
-        "assets/graphic-work/uc-merced-work/social-media/thanksgiving/thanksgiving-5.png"
+        "assets/graphic-work/uc-merced-work/social-media/thanksgiving/thanksgiving-1.jpg",
+        "assets/graphic-work/uc-merced-work/social-media/thanksgiving/thanksgiving-2.jpg",
+        "assets/graphic-work/uc-merced-work/social-media/thanksgiving/thanksgiving-3.jpg",
+        "assets/graphic-work/uc-merced-work/social-media/thanksgiving/thanksgiving-4.jpg",
+        "assets/graphic-work/uc-merced-work/social-media/thanksgiving/thanksgiving-5.jpg"
     ]
 ];
