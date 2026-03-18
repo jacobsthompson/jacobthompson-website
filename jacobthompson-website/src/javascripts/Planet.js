@@ -6,6 +6,9 @@ function Planet({planetCount, src, orbitRadius, delayIndex, size = 100, isPaused
     const [duration, setDuration] = useState(1);
     const [delay, setDelay] = useState(delayIndex * (duration/planetCount));
     const [showInfo, setShowInfo] = useState(false);
+
+    const [interactable, setInteractable] = useState(false);
+
     const srcTitle = src[0];
     const srcImage = src[1];
     const srcDesc = src[2];
@@ -17,6 +20,7 @@ function Planet({planetCount, src, orbitRadius, delayIndex, size = 100, isPaused
         const newDuration = 240;
         setDuration(newDuration);
         setDelay((planetCount - delayIndex) * -(newDuration/planetCount));
+        setInteractable(true);
     }, 1000);
 
     const preventDragHandler = (e) => {
@@ -24,8 +28,8 @@ function Planet({planetCount, src, orbitRadius, delayIndex, size = 100, isPaused
     }
 
     const handleClickEffect = (title, link, linkType) => {
-        if(link && linkType) {
-            if(linkType === 'external'){
+        if(linkType && interactable) {
+            if(link && linkType === 'external'){
                 window.open(link);
             } else if(linkType === 'internal'){
                 handleModal(src);
@@ -34,8 +38,10 @@ function Planet({planetCount, src, orbitRadius, delayIndex, size = 100, isPaused
     }
 
     const handleMouseEnter = () => {
-        setShowInfo(true);
-        handlePause(true);
+        if(interactable){
+            setShowInfo(true);
+            handlePause(true);
+        }
     }
 
     const handleMouseOut = () => {
@@ -69,7 +75,7 @@ function Planet({planetCount, src, orbitRadius, delayIndex, size = 100, isPaused
                                  animationIterationCount: 'infinite',
                                  animationPlayState: isPaused ? 'paused' : 'running'
                             }}>
-                            <img className="planet-image" src={srcImage} alt={''}/>
+                            <img className={`planet-image ${interactable}`} src={srcImage} style={{boxShadow: srcTitle === 'Daily Dominos' ? '0 0 1rem black inset, 0 0 1.5rem black' : 'none', borderRadius: '50%'}} alt={''}/>
                         </div>
                     </div>
                 </div>
@@ -83,7 +89,7 @@ function Planet({planetCount, src, orbitRadius, delayIndex, size = 100, isPaused
     );
 }
 
-export default function Planets({srcPlanets, toggleModal}) {
+export default function Planets({srcPlanets, toggleModal, isPaused, scale}) {
     const [paused, setPaused] = useState(false);
 
     const handlePause = (isPaused) => {
@@ -95,10 +101,10 @@ export default function Planets({srcPlanets, toggleModal}) {
     }
 
     return (
-        <div className="projects-container">
+        <div className="projects-container" style={{scale: scale}}>
             <div className="planets-wrapper">
                 {srcPlanets.map((planet, i) => (
-                    <Planet key={i} planetCount={srcPlanets.length} orbitRadius={500} delayIndex={i} src={srcPlanets[i]} isPaused={paused} handlePause={handlePause} handleModal={handleModal}/>
+                    <Planet key={i} planetCount={srcPlanets.length} orbitRadius={500} delayIndex={i} src={srcPlanets[i]} isPaused={isPaused ? isPaused : paused} handlePause={handlePause} handleModal={handleModal}/>
                 ))}
             </div>
         </div>

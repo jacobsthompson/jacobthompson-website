@@ -7,7 +7,7 @@
     height: 100%;
     top: 0;
     left: 0;
-    z-index: 1000;
+    z-index: 2;
     background-color: rgba(10,10,10,0.5);
 }
 
@@ -21,29 +21,242 @@
     color: white;
 
     border: 2px solid white;
-    z-index: 10;
+    z-index: 3;
+}
+
+.clickable-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 1;
 }
 
 .modal {
-    width: 100%;
-    height: 100%;
+    display: flex;
+    flex-direction: column;
+    width: 45rem;
+    height: 45rem;
     box-sizing: border-box;
     padding: 20px;
-    align-content: center;
-    justify-content: center;
+    gap: 20px;
+    align-items: center;
+    justify-content: space-evenly;
+    overflow-y: scroll;
+    overflow-x: hidden;
 }
 
+.modal-title {
+    color: white;
+    font-size: 2.25rem;
+    font-weight: bold;
+}
+
+.modal-image {
+    max-width: 100%;
+    max-height: 100%;
+    border: 1px solid;
+}
+
+.modal-image.subImage {
+    height: 100%;
+    border: 1px solid;
+}
+
+.modal-image:hover {
+    cursor: zoom-in;
+    box-shadow: 0 0 5px 2px white;
+}
+
+/*SPECIAL CASES*/
+
 .digital-duck {
-    width: 800px;
-    height: 442px;
+    width: 100%;
+    height: 60rem;
 }
 
 .youtube-video {
-    width: 720px;
-    height: 410px;
+    width: 100%;
+    min-height: 400px;
+    overflow: visible;
+    border: 1px solid;
 }
 
 .river-cleanup {
-    width: 600px;
-    height: 642px;
+    width: calc(100% - 42px);
+    /*height: calc(100% + 42px);*/
+    aspect-ratio: 0.936 / 1;
 }
+
+/*FULL SCREEN IMAGE*/
+
+.full-image {
+    max-width: 90vw;
+    max-height: 90vh;
+    z-index: 5;
+    cursor: zoom-out;
+}
+
+.modal-background.fi {
+    z-index: 5;
+    background-color: rgba(10,10,10,0.8);
+}
+
+.clickable-background.fi {
+    cursor: zoom-out;
+}
+
+/*CAROUSEL*/
+
+.carousel-wrapper {
+    position: relative;
+    width: 100%;
+    height: 200px;
+    overflow: hidden;
+    border: 2px solid white;
+    transition: scale 0.4s ease;
+}
+
+.carousel-overlay {
+    position: absolute;
+    inset: 0;
+    background-color: rgba(10,10,10,0.75);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10;
+}
+
+.carousel-wrapper:hover {
+    scale: 1.02;
+    box-shadow: 0 0 5px 2px white;
+    cursor: pointer;
+}
+
+.carousel-track {
+    display: flex;
+    flex-direction: row;
+    width: max-content;
+    height: 100%;
+}
+
+.modal-image.carousel {
+    height: 100%;
+    border-style: none;
+    pointer-events: none;
+}
+
+/*SHOWCASE*/
+
+.showcase-wrapper {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+}
+
+/*MODAL HEADER*/
+
+.modal-header {
+    width: 100%;
+    height: 2.5rem;
+
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    align-items: center;
+
+    border: 2px white;
+    border-style: none none solid none;
+}
+
+.modal-header-info {
+    display: flex;
+    flex-direction: row;
+    padding-left: 10px;
+}
+
+.modal-header-text {
+    color: white;
+    font-size: 1.5rem;
+    align-self: center;
+}
+
+.modal-header-text.title {
+    font-size: 0.95rem;
+    padding-left: 10px;
+    justify-self: left;
+    white-space: nowrap;
+}
+
+.modal-header-text.back {
+    font-family: Abordage, sans-serif;
+    font-size: 1.25rem;
+    font-weight: bold;
+}
+
+.modal-header-image {
+    height: 1.5rem;
+    filter: invert(1);
+}
+
+.modal-header-buttons {
+    display: flex;
+    flex-direction: row;
+    justify-self: right;
+}
+
+.modal-header-button {
+    width: 2.5rem;
+    height: 2.5rem;
+
+    border: 2px white;
+    border-style: none none none solid;
+
+    display: flex;
+    justify-self: right;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal-header-button:hover {
+    background-color: #333;
+    cursor: pointer;
+}
+
+@keyframes carousel-scroll {
+    0%   { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+}
+
+@media screen and (max-width: 800px), (max-height: 800px) {
+    .modal{
+        max-width: 90vw;
+        max-height: 90vh;
+        min-height: 400px;
+    }
+
+    .modal-header{
+        max-width: 90vw;
+    }
+
+    .youtube-video{
+        min-height: 40%;
+    }
+
+    .digital-duck{
+        max-height: 15.5rem;
+        min-height: 248px;
+    }
+
+    .modal-image.subImage {
+        height: max-content;
+        max-height: 100%;
+    }
+
+    .river-cleanup{
+        aspect-ratio: 0.9 / 1;
+    }
+}
+

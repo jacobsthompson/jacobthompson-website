@@ -3,6 +3,11 @@
     src: local("Abordage-Regular"), url("../public/assets/fonts/Abordage-Regular.woff2") format("woff2");
 }
 
+@font-face {
+  font-family: "Karrik";
+  src: local("Karrik-Regular"), url("../public/assets/fonts/Karrik-Regular.woff2") format("woff2");
+}
+
 html, body {
     margin: 0;
     padding: 0;

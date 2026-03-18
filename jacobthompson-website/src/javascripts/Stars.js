@@ -47,7 +47,7 @@ export default function Stars({ count = 150, randomizer}) {
     }));
 
     return (
-    <div style={{zIndex: 1}}>
+    <div style={{zIndex: 0}}>
       {stars.map(star => (
         <div
           key={star.id}

@@ -17,7 +17,7 @@
 
 .info-card {
     box-sizing: border-box;
-    padding: 20px;
+    padding: 15px 20px;
 }
 
 .info-header {
@@ -26,7 +26,7 @@
     align-items: baseline;
     gap: 1rem;
     width: fit-content;
-    padding-bottom: 0.75rem;
+    padding-bottom: 0.5rem;
     border: 2px white;
     border-style: none none solid none;
 }
@@ -44,7 +44,7 @@
 
 .info-desc {
     text-align: left;
-    padding-top: 1rem;
+    padding-top: 0.75rem;
     font-family: Abordage;
     font-weight: normal;
     font-size: 0.9rem;
