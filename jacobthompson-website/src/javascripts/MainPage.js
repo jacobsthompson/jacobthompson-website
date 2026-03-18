@@ -21,34 +21,34 @@ const srcs = [
 
 const starRandomizedValue = new Date().toString();
 
-function calculatePageScale(maxWidth = 1512, maxHeight = 860, minWidth = 320, minHeight = 320, minScale = 0.325) {
-    const [scale, setScale] = useState(1);
-
-    useEffect(() => {
-        const calculateScale = () => {
-            const width = window.innerWidth;
-            const height = window.innerHeight;
-
-            const progressWidth = (width - minWidth) / (maxWidth - minWidth);
-            const progressHeight = (height - minHeight) / (maxHeight - minHeight);
-            const rawScaleWidth = minScale + (1 - minScale) * progressWidth;
-            const rawScaleHeight = minScale + (1 - minScale) * progressHeight;
-            setScale(Math.min(1, Math.max(minScale, Math.min(rawScaleWidth, rawScaleHeight))));
-        };
-
-        calculateScale(); // run on mount
-        window.addEventListener('resize', calculateScale);
-        return () => window.removeEventListener('resize', calculateScale);
-    }, [maxWidth, minWidth, minScale]);
-
-    return scale;
-}
-
 export default function MainPage() {
     const [toggleModal, setToggleModal] = useState(false);
     const [modalSrc, setModalSrc] = useState(null);
 
-    const [scale, setScale] = useState(calculatePageScale());
+    const calculatePageScale = (maxWidth = 1512, maxHeight = 860, minWidth = 320, minHeight = 320, minScale = 0.325) => {
+        const [scale, setScale] = useState(1);
+
+        useEffect(() => {
+            const calculateScale = () => {
+                const width = window.innerWidth;
+                const height = window.innerHeight;
+
+                const progressWidth = (width - minWidth) / (maxWidth - minWidth);
+                const progressHeight = (height - minHeight) / (maxHeight - minHeight);
+                const rawScaleWidth = minScale + (1 - minScale) * progressWidth;
+                const rawScaleHeight = minScale + (1 - minScale) * progressHeight;
+                setScale(Math.min(1, Math.max(minScale, Math.min(rawScaleWidth, rawScaleHeight))));
+            };
+
+            calculateScale(); // run on mount
+            window.addEventListener('resize', calculateScale);
+            return () => window.removeEventListener('resize', calculateScale);
+        }, [maxWidth, minWidth, minScale]);
+
+        return scale;
+    }
+
+    const scale = calculatePageScale();
 
     const handleToggleModal = (src) => {
         setToggleModal(!toggleModal);
