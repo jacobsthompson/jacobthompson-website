@@ -263,4 +263,9 @@
     .modal-header{
         max-width: 90vw;
     }
+
+    @keyframes modal-expand {
+        0% { width: 20vw; height: 10vw; }
+        100% {width: 90vw; height: 90vh; }
+    }
 }
