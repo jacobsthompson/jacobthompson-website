@@ -45,6 +45,26 @@
     justify-content: space-evenly;
     overflow-y: scroll;
     overflow-x: hidden;
+
+    animation: modal-expand 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.modal > * {
+    opacity: 0;
+    animation: fade-in 0.3s ease forwards;
+    animation-delay: 0.4s;
+}
+
+/*MODAL ANIMATION*/
+
+@keyframes modal-expand {
+    0% { width: 400px; height: 200px; }
+    100% {width: 45rem; height: 45rem; }
+}
+
+@keyframes fade-in {
+    0% { opacity: 0 }
+    100% {opacity: 1}
 }
 
 .modal-title {
