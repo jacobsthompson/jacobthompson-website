@@ -32,6 +32,104 @@ export const Thumbnails = [
     `${Cloud}/assets/graphic-work/uc-merced-work/thumbnails/12-international.jpg`,
 ];
 
+export const ThumbnailShowcase = [
+    // BOBCAT LIFE
+    [
+        `${Cloud}/assets/graphic-work/uc-merced-work/thumbnails/bobcat-life/bl-1.jpg`,
+        `${Cloud}/assets/graphic-work/uc-merced-work/thumbnails/bobcat-life/bl-2.png`,
+        `${Cloud}/assets/graphic-work/uc-merced-work/thumbnails/bobcat-life/bl-3.png`,
+        `${Cloud}/assets/graphic-work/uc-merced-work/thumbnails/bobcat-life/bl-4.png`,
+        `${Cloud}/assets/graphic-work/uc-merced-work/thumbnails/bobcat-life/bl-5.png`,
+        `${Cloud}/assets/graphic-work/uc-merced-work/thumbnails/bobcat-life/bl-6.jpg`
+    ],
+    // OTHERS
+    [
+        `${Cloud}/assets/graphic-work/uc-merced-work/thumbnails/other/admit.jpg`,
+        `${Cloud}/assets/graphic-work/uc-merced-work/thumbnails/other/cooking.jpg`
+    ],
+    // 2024 WEBINARS
+    [
+        `${Cloud}/assets/graphic-work/uc-merced-work/thumbnails/webinar-blue/d-1.jpg`,
+        `${Cloud}/assets/graphic-work/uc-merced-work/thumbnails/webinar-blue/d-2.jpg`,
+        `${Cloud}/assets/graphic-work/uc-merced-work/thumbnails/webinar-blue/d-3.jpg`,
+        `${Cloud}/assets/graphic-work/uc-merced-work/thumbnails/webinar-blue/d-4.jpg`,
+        `${Cloud}/assets/graphic-work/uc-merced-work/thumbnails/webinar-blue/d-5.jpg`,
+        `${Cloud}/assets/graphic-work/uc-merced-work/thumbnails/webinar-blue/d-6.jpg`,
+        `${Cloud}/assets/graphic-work/uc-merced-work/thumbnails/webinar-blue/d-7.jpg`,
+        `${Cloud}/assets/graphic-work/uc-merced-work/thumbnails/webinar-blue/d-8.jpg`,
+        `${Cloud}/assets/graphic-work/uc-merced-work/thumbnails/webinar-blue/d-9.jpg`
+    ],
+    // 2025 WEBINARS
+    [
+        `${Cloud}/assets/graphic-work/uc-merced-work/thumbnails/webinar-2025/bab-1.jpg`,
+        `${Cloud}/assets/graphic-work/uc-merced-work/thumbnails/webinar-2025/bab-2.jpg`,
+        `${Cloud}/assets/graphic-work/uc-merced-work/thumbnails/webinar-2025/bab-3.jpg`,
+        `${Cloud}/assets/graphic-work/uc-merced-work/thumbnails/webinar-2025/bab-4.jpg`,
+        `${Cloud}/assets/graphic-work/uc-merced-work/thumbnails/webinar-2025/bab-5.jpg`,
+        `${Cloud}/assets/graphic-work/uc-merced-work/thumbnails/webinar-2025/bab-6.jpg`,
+        `${Cloud}/assets/graphic-work/uc-merced-work/thumbnails/webinar-2025/bab-7.jpg`,
+        `${Cloud}/assets/graphic-work/uc-merced-work/thumbnails/webinar-2025/bab-8.jpg`,
+        `${Cloud}/assets/graphic-work/uc-merced-work/thumbnails/webinar-2025/bab-9.jpg`,
+        `${Cloud}/assets/graphic-work/uc-merced-work/thumbnails/webinar-2025/bab-10.jpg`,
+        `${Cloud}/assets/graphic-work/uc-merced-work/thumbnails/webinar-2025/bab-11.jpg`,
+        `${Cloud}/assets/graphic-work/uc-merced-work/thumbnails/webinar-2025/bab-12.jpg`,
+        `${Cloud}/assets/graphic-work/uc-merced-work/thumbnails/webinar-2025/bab-13.jpg`,
+        `${Cloud}/assets/graphic-work/uc-merced-work/thumbnails/webinar-2025/bab-14.jpg`,
+        `${Cloud}/assets/graphic-work/uc-merced-work/thumbnails/webinar-2025/bab-15.jpg`,
+        `${Cloud}/assets/graphic-work/uc-merced-work/thumbnails/webinar-2025/bab-16.jpg`,
+        `${Cloud}/assets/graphic-work/uc-merced-work/thumbnails/webinar-2025/bab-17.jpg`,
+        `${Cloud}/assets/graphic-work/uc-merced-work/thumbnails/webinar-2025/bab-18.jpg`,
+        `${Cloud}/assets/graphic-work/uc-merced-work/thumbnails/webinar-2025/bab-19.jpg`,
+        `${Cloud}/assets/graphic-work/uc-merced-work/thumbnails/webinar-2025/bab-20.jpg`,
+        `${Cloud}/assets/graphic-work/uc-merced-work/thumbnails/webinar-2025/bab-21.jpg`,
+        `${Cloud}/assets/graphic-work/uc-merced-work/thumbnails/webinar-2025/bab-22.jpg`,
+        `${Cloud}/assets/graphic-work/uc-merced-work/thumbnails/webinar-2025/bab-23.jpg`,
+        `${Cloud}/assets/graphic-work/uc-merced-work/thumbnails/webinar-2025/bab-24.jpg`,
+        `${Cloud}/assets/graphic-work/uc-merced-work/thumbnails/webinar-2025/bab-25.jpg`
+    ]
+];
+
+export const Logos = [
+    `${Cloud}/assets/graphic-work/uc-merced-work/logos/bobcatlife.png`,
+    `${Cloud}/assets/graphic-work/uc-merced-work/logos/summeratucm.png`,
+    `${Cloud}/assets/graphic-work/uc-merced-work/logos/moc-circle.png`,
+    `${Cloud}/assets/graphic-work/uc-merced-work/logos/moc-text.png`,
+    //MEDIA CATS
+    [
+        `${Cloud}/assets/graphic-work/uc-merced-work/logos/mc/mc-1.png`,
+        `${Cloud}/assets/graphic-work/uc-merced-work/logos/mc/mc-2.png`,
+        `${Cloud}/assets/graphic-work/uc-merced-work/logos/mc/mc-3.png`,
+        `${Cloud}/assets/graphic-work/uc-merced-work/logos/mc/mc-4.png`
+    ],
+    // UCRC LOGO
+    [
+        `${Cloud}/assets/graphic-work/uc-merced-work/logos/ucrc-logo/ucrc-logo-1.png`,
+        `${Cloud}/assets/graphic-work/uc-merced-work/logos/ucrc-logo/ucrc-logo-2.png`,
+        `${Cloud}/assets/graphic-work/uc-merced-work/logos/ucrc-logo/ucrc-logo-3.png`,
+        `${Cloud}/assets/graphic-work/uc-merced-work/logos/ucrc-logo/ucrc-logo-4.png`,
+        `${Cloud}/assets/graphic-work/uc-merced-work/logos/ucrc-logo/ucrc-logo-5.png`,
+        `${Cloud}/assets/graphic-work/uc-merced-work/logos/ucrc-logo/ucrc-logo-6.png`
+    ],
+    // MC PRODUCTIONS
+    [
+        `${Cloud}/assets/graphic-work/uc-merced-work/logos/mc-prod/prod-1.png`,
+        `${Cloud}/assets/graphic-work/uc-merced-work/logos/mc-prod/prod-2.png`,
+        `${Cloud}/assets/graphic-work/uc-merced-work/logos/mc-prod/prod-3.png`,
+        `${Cloud}/assets/graphic-work/uc-merced-work/logos/mc-prod/prod-4.png`
+    ],
+    // UCRC TEXT
+    [
+        `${Cloud}/assets/graphic-work/uc-merced-work/logos/ucrc-text/ucrc-text-1.png`,
+        `${Cloud}/assets/graphic-work/uc-merced-work/logos/ucrc-text/ucrc-text-2.png`,
+        `${Cloud}/assets/graphic-work/uc-merced-work/logos/ucrc-text/ucrc-text-3.png`,
+        `${Cloud}/assets/graphic-work/uc-merced-work/logos/ucrc-text/ucrc-text-4.png`,
+        `${Cloud}/assets/graphic-work/uc-merced-work/logos/ucrc-text/ucrc-text-5.png`,
+        `${Cloud}/assets/graphic-work/uc-merced-work/logos/ucrc-text/ucrc-text-6.png`
+    ],
+    `${Cloud}/assets/graphic-work/uc-merced-work/logos/askamediacat.png`,
+    `${Cloud}/assets/graphic-work/uc-merced-work/logos/askamediacat-summer.png`
+]
+
 export const SocialMedia = [
     `${Cloud}/assets/graphic-work/uc-merced-work/social-media/movein.jpg`,
     // Welcome To UC Merced

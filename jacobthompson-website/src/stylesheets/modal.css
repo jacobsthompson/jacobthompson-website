@@ -141,6 +141,7 @@
     overflow: hidden;
     border: 2px solid white;
     transition: scale 0.4s ease;
+    background-color: white;
 }
 
 .carousel-overlay {

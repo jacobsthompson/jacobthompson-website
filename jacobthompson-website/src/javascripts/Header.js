@@ -23,9 +23,20 @@ export default function Header({title, subtitle}){
                 </div>
             </div>
             <div className="icons-wrapper">
-                <img className="icon" src={'/assets/icons/linkedin.png'} onClick={() => handleClick(links[0])} alt=""/>
-                <img className="icon" src={'/assets/icons/mail.svg'} onClick={handleMail} alt=""/>
-                <img className="icon" src={'/assets/icons/github.svg'} onClick={() => handleClick(links[1])} alt=""/>
+                <div className="icon-wrapper">
+                    <img className="icon" src={'/assets/icons/linkedin.png'} onClick={() => handleClick(links[0])} alt=""/>
+                    <div className="icon-label">LinkedIn</div>
+                </div>
+
+                <div className="icon-wrapper">
+                    <img className="icon" src={'/assets/icons/mail.svg'} onClick={handleMail} alt=""/>
+                    <div className="icon-label">Email</div>
+                </div>
+
+                <div className="icon-wrapper">
+                    <img className="icon" src={'/assets/icons/github.svg'} onClick={() => handleClick(links[1])} alt=""/>
+                    <div className="icon-label">GitHub</div>
+                </div>
             </div>
         </div>
     );

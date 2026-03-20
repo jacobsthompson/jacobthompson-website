@@ -6,6 +6,7 @@
     background-color: #0a0a0a;
     margin: 2rem auto 1rem auto;
     z-index: 2;
+    align-items: center;
 }
 
 .header {
@@ -52,12 +53,17 @@
 }
 
 .icons-wrapper {
-    display: flex;
-    flex-direction: row;
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
     justify-content: center;
-    align-items: center;
-    gap: 2rem;
+    justify-self: center;
+    align-items: baseline;
+    gap: 0.5rem;
     padding-top: 1.5rem;
+}
+
+.icon-wrapper {
+    width: 4rem;
 }
 
 .icon {
@@ -66,8 +72,31 @@
     transition: transform 0.2s ease;
 }
 
-.icon:hover {
+.icon-wrapper:hover .icon{
     transform: scale(1.25);
     filter: sepia(1) saturate(100) hue-rotate(40deg);
     cursor: pointer;
+}
+
+.icon-label {
+    position: relative;
+    white-space: nowrap;
+    text-align: center;
+    justify-self: center;
+    animation: text-fadeOut 0.3s forwards;
+    padding-top: 0.5rem;
+}
+
+.icon-wrapper:hover .icon-label{
+    animation: text-fadeIn 0.3s forwards;
+}
+
+@keyframes text-fadeIn {
+    from { opacity: 0; font-size: 0; }
+    to { opacity: 1; font-size: 1rem; }
+}
+
+@keyframes text-fadeOut {
+    from { opacity: 1; font-size: 1rem; }
+    to { opacity: 0; font-size: 0; }
 }

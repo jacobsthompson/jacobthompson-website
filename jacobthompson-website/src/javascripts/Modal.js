@@ -1,6 +1,6 @@
 import '../stylesheets/modal.css';
 import {useEffect, useState} from "react";
-import {PASCImage, DuckImage, Fliers, Thumbnails, SocialMedia} from "./images";
+import {PASCImage, DuckImage, Fliers, Thumbnails, Logos, SocialMedia, ThumbnailShowcase} from "./images";
 
 function preloadImages(srcs) {
   return Promise.all(srcs.map(src => new Promise((resolve) => {
@@ -54,7 +54,7 @@ function ModalImage({srcImage, type = ""}) {
     );
 }
 
-function ModalShowcase({images, toggleShowcase}){
+function ModalShowcase({images}){
     return(
         <div className="showcase-wrapper">
             {images.map((image, i) => renderShowcaseImage(image, i))}
@@ -154,6 +154,7 @@ function ModalContent({src, toggleModal}){
             const handleOpenShowcase = (images, title) => {
                 setOpenShowcase(!openShowcase);
                 setShowcaseImages(images);
+                if(title === 'Thumbnails') setShowcaseImages(ThumbnailShowcase);
                 setShowcaseTitle(title);
             }
 
@@ -165,7 +166,7 @@ function ModalContent({src, toggleModal}){
                             <>
                                 <Carousel images={Fliers} speed={60} title={"Fliers"} openShowcase={handleOpenShowcase}/>
                                 <Carousel images={Thumbnails} speed={60} title={"Thumbnails"} openShowcase={handleOpenShowcase}/>
-                                <Carousel images={Thumbnails} speed={60} title={"Logos"} openShowcase={handleOpenShowcase}/>
+                                <Carousel images={Logos} speed={60} title={"Logos"} openShowcase={handleOpenShowcase}/>
                                 <Carousel images={SocialMedia} speed={60} title={"Social Media"} openShowcase={handleOpenShowcase}/>
                             </>
                         )}
