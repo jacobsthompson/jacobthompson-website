@@ -1,5 +1,5 @@
 import '../stylesheets/modal.css';
-import {useState} from "react";
+import {useEffect, useState} from "react";
 import {PASCImage, DuckImage, Fliers, Thumbnails, SocialMedia} from "./images";
 
 function preloadImages(srcs) {
@@ -92,12 +92,45 @@ function Carousel({images, title, speed, openShowcase}) {
     )
 }
 
+function useResize(id, calculations) {
+    const [size, setSize] = useState({width: 0, height: 0});
+
+    useEffect(() => {
+        const element = document.getElementById(id);
+        if(!element) return;
+
+        const observer = new ResizeObserver(() => {
+            const {width, height} = element.getBoundingClientRect();
+            setSize(calculations(width, height));
+        });
+
+        observer.observe(element);
+        return () => observer.disconnect();
+    }, [id]);
+
+    return size;
+}
+
 function ModalContent({src, toggleModal}){
     const srcTitle = src[0];
     const srcImage = src[1];
     const srcDesc = src[2];
     const srcYear = src[3];
     const srcLink = src[4];
+
+    const resizeDuck = useResize("duck", (width, height) => {
+        if (width > height) return {width: height - 40, height: ((height - 40) / 2) + 42};
+        else return {width: width - 40, height: ((width - 40) / 2) + 42};
+    });
+
+    const resizeRiver = useResize("river", (width, height) => {
+        if(width < height) return {width: width - 40 - 42, height: width - 40};
+        else return {width: height - 40 - 46, height: height};
+    });
+
+    const resizeVideo = useResize("youtube", (width, height) => {
+        return {width: width - 40, height: ((width - 40) / 1.75)};
+    });
 
     const [openShowcase, setOpenShowcase] = useState(false);
     const [showcaseImages, setShowcaseImages] = useState(null);
@@ -108,8 +141,11 @@ function ModalContent({src, toggleModal}){
             return (
                 <>
                     <ModalHeader title={srcTitle} image={srcImage} toggleModal={toggleModal}/>
-                    <div className="modal">
-                        <iframe className="digital-duck" title="digital-duck" src={srcLink}/>
+                    <div className="modal" id={"duck"}>
+                        <iframe className="digital-duck" title="digital-duck" src={srcLink} style={{
+                            width: resizeDuck.width,
+                            height: resizeDuck.height
+                        }}/>
                         <ModalImage srcImage={DuckImage} type={'subImage'}/>
                     </div>
                 </>
@@ -151,9 +187,12 @@ function ModalContent({src, toggleModal}){
             return (
                 <>
                     <ModalHeader title={"Progress Assessment Scheduling Calendar"} image={srcImage} toggleModal={toggleModal}/>
-                    <div className="modal">
+                    <div className="modal" id="youtube">
                         <ModalImage srcImage={PASCImage}/>
-                        <iframe className="youtube-video" title="youtube-video" src={srcLink}/>
+                        <iframe className="youtube-video" title="youtube-video" src={srcLink} style={{
+                            width: resizeVideo.width,
+                            minHeight: resizeVideo.height
+                        }}/>
                     </div>
                 </>
             );
@@ -161,8 +200,11 @@ function ModalContent({src, toggleModal}){
             return (
                 <>
                     <ModalHeader title={srcTitle} image={srcImage} toggleModal={toggleModal}/>
-                    <div className="modal">
-                        <iframe className="river-cleanup" title="river-cleanup" src={srcLink}/>
+                    <div className="modal" id={"river"}>
+                        <iframe className="river-cleanup" title="river-cleanup" src={srcLink} style={{
+                            width: resizeRiver.width,
+                            height: resizeRiver.height
+                        }}/>
                     </div>
                 </>
             );

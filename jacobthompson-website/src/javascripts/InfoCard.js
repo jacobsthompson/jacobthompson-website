@@ -1,5 +1,57 @@
 import '../stylesheets/infocard.css';
 
+export function MobileInfoCards({srcs, toggleModal}){
+
+    const handleModal = (src) => {
+        toggleModal(src);
+    }
+
+    return (
+        <div className="mobile-info-cards-wrapper">
+            {srcs.map((planet, i) => (
+                <MobileInfoCard key={i} src={srcs[i]}  handleModal={handleModal}/>
+            ))}
+        </div>
+    );
+}
+
+export function MobileInfoCard({src, handleModal}){
+
+    const srcTitle = src[0];
+    const srcImage = src[1];
+    const srcDesc = src[2];
+    const srcYear = src[3];
+    const srcLink = src[4];
+    const srcLinkType = src[5];
+
+    const handleClickEffect = (title, link, linkType) => {
+        if(linkType) {
+            if(link && linkType === 'external'){
+                window.open(link);
+            } else if(linkType === 'internal'){
+                handleModal(src);
+            }
+        }
+    }
+
+    if(srcTitle) {
+        return (
+            <div className="mobile-info-wrapper" onClick={() => handleClickEffect(srcTitle, srcLink, srcLinkType)}>
+                <div className="info-card">
+                    <div className="info-header">
+                        <img className="info-image" src={srcImage} alt=""/>
+                        <div className="info-title-header">
+                            <div className="info-title">{srcTitle}</div>
+                            <div className="info-year">{srcYear}</div>
+                        </div>
+                    </div>
+                    <div className="info-desc">{srcDesc}</div>
+                </div>
+            </div>
+        );
+    }
+}
+
 export default function InfoCard({title, year, description}){
     if(title){
         return (
