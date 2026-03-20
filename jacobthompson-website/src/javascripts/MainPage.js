@@ -22,6 +22,17 @@ const srcs = [
     [null, 'assets/planets/planetX-1.png', null, null, null, null]
 ];
 
+const mobileSrcs = [
+    srcs[0],
+    srcs[5],
+    srcs[1],
+    srcs[3],
+    srcs[2],
+    srcs[6],
+    srcs[7],
+    srcs[8]
+];
+
 const starRandomizedValue = new Date().toString();
 
 function usePageScale(maxWidth = 1512, maxHeight = 860, minWidth = 320, minHeight = 320, minScale = 0.325){
@@ -75,7 +86,7 @@ export default function MainPage() {
             { window.innerWidth <= safariMobileView && (
                 <div className="mobile-projects">
                     <div className="mobile-title">Projects</div>
-                    <MobileInfoCards srcs={srcs} toggleModal={handleToggleModal}/>
+                    <MobileInfoCards srcs={mobileSrcs} toggleModal={handleToggleModal}/>
                 </div>
             )}
             <Modal src={modalSrc} toggleModal={handleToggleModal} toggled={toggleModal}/>

@@ -92,4 +92,14 @@
     display: flex;
     flex-direction: column;
     gap: 20px;
+    padding-bottom: 150px;
+}
+
+
+@media screen and (max-width: 500px), (max-height: 500px) {
+    .info-title {
+    font-weight: bold;
+    font-size: 1.4rem;
+    text-align: left;
+}
 }

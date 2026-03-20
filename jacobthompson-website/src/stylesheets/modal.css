@@ -1,6 +1,6 @@
 :root{
     --animation-time: 1s;
-    --fade-time: 0.3s;
+    --fade-time: 0.4s;
 }
 
 .modal-background {
@@ -8,12 +8,13 @@
     position: absolute;
     justify-content: center;
     align-items: center;
-    width: 100%;
-    height: 100%;
+    width: 100dvw;
+    height: 100dvh;
     top: 0;
     left: 0;
     z-index: 12;
-    background-color: rgba(10,10,10,0.75);
+    background-color: rgba(10,10,10,0.9);
+    padding-bottom: 1000px;
 }
 
 .modal-wrapper {
@@ -33,9 +34,10 @@
     position: fixed;
     top: 0;
     left: 0;
-    width: 100vw;
-    height: 100vh;
+    width: 100dvw;
+    height: 100dvh;
     z-index: 11;
+    padding-bottom: 1000px;
 }
 
 .modal {
@@ -52,7 +54,7 @@
     overflow-x: hidden;
 
     opacity: 0;
-    animation: modal-expand var(--animation-time) cubic-bezier(0.16, 1, 0.3, 1) forwards, fade-in 0.7s ease forwards var(--fade-time);
+    animation: modal-expand var(--animation-time) cubic-bezier(0.16, 1, 0.3, 1) forwards, fade-in 0.6s ease forwards var(--fade-time);
 }
 
 /*MODAL ANIMATION*/
@@ -193,6 +195,8 @@
     border: 2px white;
     border-style: none none solid none;
 
+    overflow: hidden;
+
     animation: header-expand var(--animation-time) cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
 
@@ -200,7 +204,6 @@
     display: flex;
     flex-direction: row;
     padding-left: 10px;
-    overflow: hidden;
 }
 
 .modal-header-text {
@@ -264,8 +267,7 @@
 @media screen and (max-width: 800px), (max-height: 800px) {
     .modal{
         max-width: 90vw;
-        max-height: 90vh;
-        min-height: 400px;
+        max-height: 80vh;
     }
 
     .modal-header{
@@ -273,8 +275,8 @@
     }
 
     @keyframes modal-expand {
-        0% { width: 2vw; height: 1vw; }
-        100% {width: 90vw; height: 90vh; }
+        0% { width: 0; height: 0; }
+        100% {width: 90vw; height: 80vh; }
     }
 
     @keyframes header-expand {
