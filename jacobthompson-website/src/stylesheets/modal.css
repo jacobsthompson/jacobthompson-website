@@ -94,8 +94,8 @@
 /*SPECIAL CASES*/
 
 .digital-duck {
-    width: 100%;
-    height: 60rem;
+    min-width: 300px;
+    min-height: 150px;
 }
 
 .youtube-video {
@@ -108,10 +108,8 @@
 }
 
 .river-cleanup {
-    /*width: min(100%, 645px);*/
-    /*width: calc(100% - 50px);*/
-    /*height: 642px;*/
-    /*aspect-ratio: 638 / 680;*/
+    min-width: 300px;
+    min-height: 342px;
 }
 
 /*FULL SCREEN IMAGE*/

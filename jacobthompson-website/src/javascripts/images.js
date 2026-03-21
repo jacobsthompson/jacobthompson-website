@@ -4,16 +4,41 @@ export const PASCImage = `${Cloud}/assets/graphic-work/school-projects/PASCPoste
 export const DuckImage = `${Cloud}/assets/graphic-work/school-projects/DigitalDuckPoster.png`;
 
 export const Fliers = [
-    `${Cloud}/assets/graphic-work/uc-merced-work/fliers/1-fafsa.png`,
-    `${Cloud}/assets/graphic-work/uc-merced-work/fliers/2-what-to-bring.png`,
-    `${Cloud}/assets/graphic-work/uc-merced-work/fliers/3-music-as-science.png`,
-    `${Cloud}/assets/graphic-work/uc-merced-work/fliers/4-smart-start.png`,
-    `${Cloud}/assets/graphic-work/uc-merced-work/fliers/6-downtown.png`,
-    `${Cloud}/assets/graphic-work/uc-merced-work/fliers/5-business.png`,
-    `${Cloud}/assets/graphic-work/uc-merced-work/fliers/7-piqs.png`,
-    `${Cloud}/assets/graphic-work/uc-merced-work/fliers/10-esports.png`,
-    `${Cloud}/assets/graphic-work/uc-merced-work/fliers/8-inside-host.png`,
-    `${Cloud}/assets/graphic-work/uc-merced-work/fliers/9-inside-participants.png`,
+    `${Cloud}/assets/graphic-work/uc-merced-work/fliers/fafsa.png`,
+    `${Cloud}/assets/graphic-work/uc-merced-work/fliers/what-to-bring.png`,
+    `${Cloud}/assets/graphic-work/uc-merced-work/fliers/music-as-science.png`,
+    `${Cloud}/assets/graphic-work/uc-merced-work/fliers/smart-start.png`,
+    `${Cloud}/assets/graphic-work/uc-merced-work/fliers/downtown.png`,
+    `${Cloud}/assets/graphic-work/uc-merced-work/fliers/business.png`,
+    `${Cloud}/assets/graphic-work/uc-merced-work/fliers/piqs.png`,
+    `${Cloud}/assets/graphic-work/uc-merced-work/fliers/esports.png`,
+    `${Cloud}/assets/graphic-work/uc-merced-work/fliers/inside-hosts.png`,
+    `${Cloud}/assets/graphic-work/uc-merced-work/fliers/inside-participants.png`,
+    `${Cloud}/assets/graphic-work/uc-merced-work/fliers/extension.png`,
+    // DEGREE COMPLETION
+    [
+        `${Cloud}/assets/graphic-work/uc-merced-work/fliers/degree-completion/degree-completion-1.png`,
+        // `${Cloud}/assets/graphic-work/uc-merced-work/fliers/degree-completion/degree-completion-2.png`,
+    ],
+    // PIQS TRANSFER
+    [
+        `${Cloud}/assets/graphic-work/uc-merced-work/fliers/piqs-transfer/piqs-transfer-1.png`,
+        `${Cloud}/assets/graphic-work/uc-merced-work/fliers/piqs-transfer/piqs-transfer-2.png`,
+    ],
+    // TPP SUMMER
+    [
+        `${Cloud}/assets/graphic-work/uc-merced-work/fliers/tpp-summer/tpp-summer-1.png`,
+        `${Cloud}/assets/graphic-work/uc-merced-work/fliers/tpp-summer/tpp-summer-2.png`,
+    ],
+    // SELECT A UNI
+    [
+        `${Cloud}/assets/graphic-work/uc-merced-work/fliers/select-a-uni/select-a-uni-1.png`,
+        `${Cloud}/assets/graphic-work/uc-merced-work/fliers/select-a-uni/select-a-uni-2.png`,
+        `${Cloud}/assets/graphic-work/uc-merced-work/fliers/select-a-uni/select-a-uni-3.png`,
+        `${Cloud}/assets/graphic-work/uc-merced-work/fliers/select-a-uni/select-a-uni-4.png`,
+        `${Cloud}/assets/graphic-work/uc-merced-work/fliers/select-a-uni/select-a-uni-5.png`,
+        `${Cloud}/assets/graphic-work/uc-merced-work/fliers/select-a-uni/select-a-uni-6.png`,
+    ],
 
 ];
 
@@ -127,7 +152,9 @@ export const Logos = [
         `${Cloud}/assets/graphic-work/uc-merced-work/logos/ucrc-text/ucrc-text-6.png`
     ],
     `${Cloud}/assets/graphic-work/uc-merced-work/logos/askamediacat.png`,
-    `${Cloud}/assets/graphic-work/uc-merced-work/logos/askamediacat-summer.png`
+    `${Cloud}/assets/graphic-work/uc-merced-work/logos/askamediacat-summer.png`,
+    `${Cloud}/assets/graphic-work/uc-merced-work/logos/ee.png`,
+    `${Cloud}/assets/graphic-work/uc-merced-work/logos/sticker.png`
 ]
 
 export const SocialMedia = [
