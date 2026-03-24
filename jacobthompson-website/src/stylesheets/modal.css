@@ -173,6 +173,14 @@
 
 /*SHOWCASE*/
 
+.showcase-header {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+}
+
 .showcase-wrapper {
     display: grid;
     grid-template-columns: repeat(2, 1fr);

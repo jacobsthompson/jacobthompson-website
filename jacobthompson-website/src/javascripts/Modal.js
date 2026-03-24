@@ -1,6 +1,6 @@
 import '../stylesheets/modal.css';
 import {useEffect, useState} from "react";
-import {PASCImage, DuckImage, Fliers, Thumbnails, Logos, SocialMedia, ThumbnailShowcase} from "./images";
+import { PASCImage, DuckImage, Fliers, Thumbnails, Logos, SocialMedia, ThumbnailShowcase, SunsetMediaWave, StoryWorks, EllisTom, MoreClients} from "./images";
 
 function preloadImages(srcs) {
   return Promise.all(srcs.map(src => new Promise((resolve) => {
@@ -54,11 +54,24 @@ function ModalImage({srcImage, type = ""}) {
     );
 }
 
-function ModalShowcase({images}){
-    return(
-        <div className="showcase-wrapper">
-            {images.map((image, i) => renderShowcaseImage(image, i))}
-        </div>
+function ModalShowcase({headerImage = null, images}){
+    return (
+        <>
+            {headerImage && (
+                <div className="showcase-header">
+                    <ModalImage key={-1} srcImage={headerImage} type={'showcase'}/>
+                    <div className="showcase-wrapper">
+                        {images.slice(1, images.length).map((image, i) => renderShowcaseImage(image, i))}
+                    </div>
+                </div>
+            )}
+
+            {!headerImage && (
+                <div className="showcase-wrapper">
+                    {images.map((image, i) => renderShowcaseImage(image, i))}
+                </div>
+            )}
+        </>
     );
 }
 
@@ -135,6 +148,19 @@ function ModalContent({src, toggleModal}){
     const [openShowcase, setOpenShowcase] = useState(false);
     const [showcaseImages, setShowcaseImages] = useState(null);
     const [showcaseTitle, setShowcaseTitle] = useState("");
+    const [showcaseHeader, setShowcaseHeader] = useState(null);
+
+    const handleOpenShowcase = (images, title) => {
+        setOpenShowcase(!openShowcase);
+        setShowcaseImages(images);
+        if(title === 'Thumbnails') setShowcaseImages(ThumbnailShowcase);
+        if(title === 'Ellis Tom' || title === 'More Clients' || title === 'Sunset Media Wave'){
+            setShowcaseHeader(images[0]);
+        } else {
+            setShowcaseHeader(null);
+        }
+        setShowcaseTitle(title);
+    }
 
     switch (srcTitle){
         case 'A Digital Duck':
@@ -151,13 +177,6 @@ function ModalContent({src, toggleModal}){
                 </>
             );
         case 'UC Merced':
-            const handleOpenShowcase = (images, title) => {
-                setOpenShowcase(!openShowcase);
-                setShowcaseImages(images);
-                if(title === 'Thumbnails') setShowcaseImages(ThumbnailShowcase);
-                setShowcaseTitle(title);
-            }
-
             return (
                 <>
                     <ModalHeader title={srcTitle} image={srcImage} toggleModal={toggleModal} subPage={openShowcase} subPageTitle={showcaseTitle} toggleSubpage={handleOpenShowcase}/>
@@ -179,15 +198,30 @@ function ModalContent({src, toggleModal}){
         case 'Graphic Design':
             return (
                 <>
-                    <ModalHeader title={srcTitle} image={srcImage} toggleModal={toggleModal}/>
+                    <ModalHeader title={srcTitle} image={srcImage} toggleModal={toggleModal} subPage={openShowcase} subPageTitle={showcaseTitle} toggleSubpage={handleOpenShowcase}/>
                     <div className="modal">
+                        {!openShowcase && (
+                            <>
+                                <Carousel images={SunsetMediaWave} speed={60} title={"Sunset Media Wave"}
+                                          openShowcase={handleOpenShowcase}/>
+                                <Carousel images={StoryWorks} speed={120} title={"Storyworks Theater"}
+                                          openShowcase={handleOpenShowcase}/>
+                                <Carousel images={EllisTom} speed={60} title={"Ellis Tom"} openShowcase={handleOpenShowcase}/>
+                                <Carousel images={MoreClients} speed={60} title={"More Clients"}
+                                          openShowcase={handleOpenShowcase}/>
+                            </>
+                        )}
+                        {openShowcase && (
+                            <ModalShowcase images={showcaseImages} toggleShowcase={handleOpenShowcase} headerImage={showcaseHeader}/>
+                        )}
                     </div>
                 </>
             );
         case 'PASC':
             return (
                 <>
-                    <ModalHeader title={"Progress Assessment Scheduling Calendar"} image={srcImage} toggleModal={toggleModal}/>
+                    <ModalHeader title={"Progress Assessment Scheduling Calendar"} image={srcImage}
+                                 toggleModal={toggleModal}/>
                     <div className="modal" id="youtube">
                         <ModalImage srcImage={PASCImage}/>
                         <iframe className="youtube-video" title="youtube-video" src={srcLink} style={{

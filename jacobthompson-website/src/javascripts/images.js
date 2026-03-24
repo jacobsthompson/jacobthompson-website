@@ -233,3 +233,73 @@ export const SocialMedia = [
         `${Cloud}/assets/graphic-work/uc-merced-work/social-media/thanksgiving/thanksgiving-5.jpg`
     ]
 ];
+
+// FREELANCE
+
+export const SunsetMediaWave = [
+    `${Cloud}/assets/graphic-work/freelance-design/smw/smw-11.png`,
+    `${Cloud}/assets/graphic-work/freelance-design/smw/smw-1.png`,
+    `${Cloud}/assets/graphic-work/freelance-design/smw/smw-2.png`,
+    `${Cloud}/assets/graphic-work/freelance-design/smw/smw-3.png`,
+    `${Cloud}/assets/graphic-work/freelance-design/smw/smw-4.png`,
+    `${Cloud}/assets/graphic-work/freelance-design/smw/smw-5.png`,
+    `${Cloud}/assets/graphic-work/freelance-design/smw/smw-6.png`,
+    `${Cloud}/assets/graphic-work/freelance-design/smw/smw-7.png`,
+    `${Cloud}/assets/graphic-work/freelance-design/smw/smw-8.png`,
+    `${Cloud}/assets/graphic-work/freelance-design/smw/smw-9.png`,
+    `${Cloud}/assets/graphic-work/freelance-design/smw/smw-10.png`
+];
+
+export const StoryWorks = [
+    `${Cloud}/assets/graphic-work/freelance-design/storyworks/storyworks-1.jpg`,
+    `${Cloud}/assets/graphic-work/freelance-design/storyworks/storyworks-2.jpg`,
+    `${Cloud}/assets/graphic-work/freelance-design/storyworks/storyworks-3.jpg`,
+    `${Cloud}/assets/graphic-work/freelance-design/storyworks/storyworks-4.jpg`,
+    `${Cloud}/assets/graphic-work/freelance-design/storyworks/storyworks-5.jpg`,
+    `${Cloud}/assets/graphic-work/freelance-design/storyworks/storyworks-6.jpg`,
+    `${Cloud}/assets/graphic-work/freelance-design/storyworks/storyworks-7.jpg`,
+    `${Cloud}/assets/graphic-work/freelance-design/storyworks/storyworks-8.jpg`,
+    `${Cloud}/assets/graphic-work/freelance-design/storyworks/storyworks-9.jpg`,
+    `${Cloud}/assets/graphic-work/freelance-design/storyworks/storyworks-10.jpg`,
+    `${Cloud}/assets/graphic-work/freelance-design/storyworks/storyworks-11.jpg`,
+    `${Cloud}/assets/graphic-work/freelance-design/storyworks/storyworks-12.jpg`,
+    `${Cloud}/assets/graphic-work/freelance-design/storyworks/storyworks-13.jpg`,
+    `${Cloud}/assets/graphic-work/freelance-design/storyworks/storyworks-14.jpg`,
+    `${Cloud}/assets/graphic-work/freelance-design/storyworks/storyworks-15.jpg`,
+    `${Cloud}/assets/graphic-work/freelance-design/storyworks/storyworks-16.jpg`,
+    `${Cloud}/assets/graphic-work/freelance-design/storyworks/storyworks-17.jpg`,
+    `${Cloud}/assets/graphic-work/freelance-design/storyworks/storyworks-18.jpg`,
+    `${Cloud}/assets/graphic-work/freelance-design/storyworks/storyworks-19.jpg`,
+    `${Cloud}/assets/graphic-work/freelance-design/storyworks/storyworks-20.jpg`,
+    `${Cloud}/assets/graphic-work/freelance-design/storyworks/storyworks-21.jpg`,
+    `${Cloud}/assets/graphic-work/freelance-design/storyworks/storyworks-22.jpg`
+];
+
+export const EllisTom = [
+    `${Cloud}/assets/graphic-work/freelance-design/ellis-tom/unplanned-films.png`,
+    `${Cloud}/assets/graphic-work/freelance-design/ellis-tom/mindsets-1.png`,
+    `${Cloud}/assets/graphic-work/freelance-design/ellis-tom/mindsets-2.png`,
+    `${Cloud}/assets/graphic-work/freelance-design/ellis-tom/stress-1.png`,
+    `${Cloud}/assets/graphic-work/freelance-design/ellis-tom/stress-2.png`,
+    `${Cloud}/assets/graphic-work/freelance-design/ellis-tom/tbhitcv.png`,
+    `${Cloud}/assets/graphic-work/freelance-design/ellis-tom/wells-of-hope.png`,
+    `${Cloud}/assets/graphic-work/freelance-design/ellis-tom/ucsd-1.png`,
+    `${Cloud}/assets/graphic-work/freelance-design/ellis-tom/ucsd-2.png`,
+    `${Cloud}/assets/graphic-work/freelance-design/ellis-tom/ucsd-3.png`,
+    `${Cloud}/assets/graphic-work/freelance-design/ellis-tom/ucsd-4.png`,
+];
+
+export const MoreClients = [
+    //UNCIVILIZED
+    `${Cloud}/assets/graphic-work/freelance-design/uncivilized/uncivilized.png`,
+
+    //SWELL FOOP
+    `${Cloud}/assets/graphic-work/freelance-design/swell-foop/swell-foop-1.png`,
+    `${Cloud}/assets/graphic-work/freelance-design/swell-foop/swell-foop-2.png`,
+    `${Cloud}/assets/graphic-work/freelance-design/swell-foop/swell-foop-3.png`,
+    `${Cloud}/assets/graphic-work/freelance-design/swell-foop/swell-foop-4.png`,
+
+    //ASUCM
+    `${Cloud}/assets/graphic-work/freelance-design/asucm/ammar.png`,
+    `${Cloud}/assets/graphic-work/freelance-design/asucm/yasmin.png`
+];
