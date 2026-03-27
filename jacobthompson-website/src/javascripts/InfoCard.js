@@ -23,6 +23,9 @@ export function MobileInfoCard({src, handleModal}){
     const srcYear = src[3];
     const srcLink = src[4];
     const srcLinkType = src[5];
+    const srcType = src[6];
+
+    const linkText = srcLinkType === 'external' ? "Visit Site" : "View Popup";
 
     const handleClickEffect = (title, link, linkType) => {
         if(linkType) {
@@ -38,7 +41,7 @@ export function MobileInfoCard({src, handleModal}){
         return (
             <div className="mobile-info-wrapper" onClick={() => handleClickEffect(srcTitle, srcLink, srcLinkType)}>
                 <div className="info-card">
-                    <div className="info-header">
+                    <div className="info-header mobile">
                         <img className="info-image" src={srcImage} alt=""/>
                         <div className="info-title-header">
                             <div className="info-title">{srcTitle}</div>
@@ -46,14 +49,22 @@ export function MobileInfoCard({src, handleModal}){
                         </div>
                     </div>
                     <div className="info-desc">{srcDesc}</div>
+                    <div className="info-tabs">
+                        <div className="info-tab">{srcType}</div>
+                    </div>
+                    <div className="info-tabs mobile">
+                        <div className="info-tab">{linkText}</div>
+                    </div>
                 </div>
             </div>
         );
     }
 }
 
-export default function InfoCard({title, year, description}){
-    if(title){
+export default function InfoCard({title, year, description, type, linkType}) {
+    const linkText = linkType === 'external' ? "Visit Site" : "View Popup";
+
+    if (title) {
         return (
             <div className="info-wrapper">
                 <div className="info-card">
@@ -62,6 +73,10 @@ export default function InfoCard({title, year, description}){
                         <div className="info-year">{year}</div>
                     </div>
                     <div className="info-desc">{description}</div>
+                </div>
+                <div className="info-tabs">
+                    <div className="info-tab">{type}</div>
+                    <div className="info-tab">{linkText}</div>
                 </div>
             </div>
         );

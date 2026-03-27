@@ -2,6 +2,7 @@ const Cloud = `https://res.cloudinary.com/dwrjdndw4/image/upload`;
 
 export const PASCImage = `${Cloud}/assets/graphic-work/school-projects/PASCPoster.png`;
 export const DuckImage = `${Cloud}/assets/graphic-work/school-projects/DigitalDuckPoster.png`;
+export const Headshot = `${Cloud}/assets/headshot.png`;
 
 export const Fliers = [
     `${Cloud}/assets/graphic-work/uc-merced-work/fliers/fafsa.png`,
@@ -242,10 +243,10 @@ export const SunsetMediaWave = [
     `${Cloud}/assets/graphic-work/freelance-design/smw/smw-2.png`,
     `${Cloud}/assets/graphic-work/freelance-design/smw/smw-3.png`,
     `${Cloud}/assets/graphic-work/freelance-design/smw/smw-4.png`,
-    `${Cloud}/assets/graphic-work/freelance-design/smw/smw-5.png`,
-    `${Cloud}/assets/graphic-work/freelance-design/smw/smw-6.png`,
     `${Cloud}/assets/graphic-work/freelance-design/smw/smw-7.png`,
     `${Cloud}/assets/graphic-work/freelance-design/smw/smw-8.png`,
+    `${Cloud}/assets/graphic-work/freelance-design/smw/smw-5.png`,
+    `${Cloud}/assets/graphic-work/freelance-design/smw/smw-6.png`,
     `${Cloud}/assets/graphic-work/freelance-design/smw/smw-9.png`,
     `${Cloud}/assets/graphic-work/freelance-design/smw/smw-10.png`
 ];
@@ -301,5 +302,7 @@ export const MoreClients = [
 
     //ASUCM
     `${Cloud}/assets/graphic-work/freelance-design/asucm/ammar.png`,
-    `${Cloud}/assets/graphic-work/freelance-design/asucm/yasmin.png`
+    `${Cloud}/assets/graphic-work/freelance-design/asucm/yasmin.png`,
+
+    `${Cloud}/assets/graphic-work/freelance-design/more-clients/hard-drive-poster.png`,
 ];

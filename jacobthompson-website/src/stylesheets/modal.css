@@ -57,18 +57,6 @@
     animation: modal-expand var(--animation-time) cubic-bezier(0.16, 1, 0.3, 1) forwards, fade-in 0.6s ease forwards var(--fade-time);
 }
 
-/*MODAL ANIMATION*/
-
-@keyframes modal-expand {
-    0% { width: 200px; height: 100px; }
-    100% {width: 45rem; height: 45rem; }
-}
-
-@keyframes fade-in {
-    0% { opacity: 0 }
-    100% {opacity: 1}
-}
-
 .modal-title {
     color: white;
     font-size: 2.25rem;
@@ -91,6 +79,16 @@
     box-shadow: 0 0 5px 2px white;
 }
 
+@keyframes modal-expand {
+    0% { width: 200px; height: 100px; }
+    100% {width: 45rem; height: 45rem; }
+}
+
+@keyframes fade-in {
+    0% { opacity: 0 }
+    100% {opacity: 1}
+}
+
 /*SPECIAL CASES*/
 
 .digital-duck {
@@ -110,83 +108,6 @@
 .river-cleanup {
     min-width: 300px;
     min-height: 342px;
-}
-
-/*FULL SCREEN IMAGE*/
-
-.full-image {
-    max-width: 90vw;
-    max-height: 90vh;
-    z-index: 5;
-    cursor: zoom-out;
-}
-
-.modal-background.fi {
-    z-index: 5;
-    background-color: rgba(10,10,10,0.8);
-}
-
-.clickable-background.fi {
-    cursor: zoom-out;
-}
-
-/*CAROUSEL*/
-
-.carousel-wrapper {
-    position: relative;
-    width: 100%;
-    height: 200px;
-    overflow: hidden;
-    border: 2px solid white;
-    transition: scale 0.4s ease;
-    background-color: white;
-}
-
-.carousel-overlay {
-    position: absolute;
-    inset: 0;
-    background-color: rgba(10,10,10,0.75);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    z-index: 10;
-}
-
-.carousel-wrapper:hover {
-    scale: 1.02;
-    box-shadow: 0 0 5px 2px white;
-    cursor: pointer;
-}
-
-.carousel-track {
-    display: flex;
-    flex-direction: row;
-    width: max-content;
-    height: 100%;
-}
-
-.modal-image.carousel {
-    height: 100%;
-    border-style: none;
-    pointer-events: none;
-}
-
-/*SHOWCASE*/
-
-.showcase-header {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-    justify-content: center;
-    align-items: center;
-}
-
-.showcase-wrapper {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 20px;
-    justify-content: center;
-    align-items: center;
 }
 
 /*MODAL HEADER*/
@@ -261,15 +182,12 @@
     cursor: pointer;
 }
 
-@keyframes carousel-scroll {
-    0%   { transform: translateX(0); }
-    100% { transform: translateX(-50%); }
-}
-
 @keyframes header-expand {
     0% { width: 200px; }
     100% {width: 45rem; }
 }
+
+/*SCREEN SIZE*/
 
 @media screen and (max-width: 800px), (max-height: 800px) {
     .modal{
@@ -287,7 +205,7 @@
     }
 
     @keyframes header-expand {
-    0% { width: 2vw; }
-    100% {width: 90vw; }
-}
+        0% { width: 2vw; }
+        100% {width: 90vw; }
+    }
 }

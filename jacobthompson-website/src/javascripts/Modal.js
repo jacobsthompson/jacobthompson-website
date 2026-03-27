@@ -1,15 +1,8 @@
 import '../stylesheets/modal.css';
 import {useEffect, useState} from "react";
-import { PASCImage, DuckImage, Fliers, Thumbnails, Logos, SocialMedia, ThumbnailShowcase, SunsetMediaWave, StoryWorks, EllisTom, MoreClients} from "./images";
-
-function preloadImages(srcs) {
-  return Promise.all(srcs.map(src => new Promise((resolve) => {
-    const img = new Image();
-    img.src = src;
-    img.onload = resolve;
-    img.onerror = resolve;
-  })));
-}
+import {Image, Showcase, Carousel} from "./Showcase";
+import {PASCImage, DuckImage, Fliers, Thumbnails, Logos, SocialMedia, ThumbnailShowcase, SunsetMediaWave, StoryWorks, EllisTom, MoreClients, Headshot } from "./Images";
+import {AboutMeModal} from "./AboutMe";
 
 function ModalHeader({title, image, toggleModal, subPage = null, subPageTitle, toggleSubpage}){
     const currTitle = subPage ? subPageTitle : title;
@@ -34,77 +27,6 @@ function ModalHeader({title, image, toggleModal, subPage = null, subPageTitle, t
     );
 }
 
-function ModalImage({srcImage, type = ""}) {
-    const [showingFullScreen, setShowingFullscreen] = useState(false);
-
-    const handleFullScreen = () => {
-        setShowingFullscreen(!showingFullScreen);
-    }
-
-    return (
-        <>
-            {showingFullScreen && (
-                <div className="modal-background fi">
-                    <div className="clickable-background fi" onClick={() => handleFullScreen()}/>
-                    <img className="full-image" src={srcImage} onClick={() => handleFullScreen()} alt={""}/>
-                </div>
-            )}
-            <img className={`modal-image ${type}`} onClick={() => handleFullScreen()} src={srcImage} alt={""}/>
-        </>
-    );
-}
-
-function ModalShowcase({headerImage = null, images}){
-    return (
-        <>
-            {headerImage && (
-                <div className="showcase-header">
-                    <ModalImage key={-1} srcImage={headerImage} type={'showcase'}/>
-                    <div className="showcase-wrapper">
-                        {images.slice(1, images.length).map((image, i) => renderShowcaseImage(image, i))}
-                    </div>
-                </div>
-            )}
-
-            {!headerImage && (
-                <div className="showcase-wrapper">
-                    {images.map((image, i) => renderShowcaseImage(image, i))}
-                </div>
-            )}
-        </>
-    );
-}
-
-const renderShowcaseImage = (image, i) => {
-    if (Array.isArray(image)) {
-        return image.map((subImage, j) => (
-            <ModalImage key={`${i}-${j}`} srcImage={subImage} type={'showcase'}/>
-        ))
-    }
-    return <ModalImage key={i} srcImage={image} type={'showcase'}/>
-}
-
-const renderCarouselImage = (image, i) => {
-    if (Array.isArray(image)) {
-        return <ModalImage key={i} srcImage={image[0]} type={'carousel'}/>
-    }
-    return <ModalImage key={i} srcImage={image} type={'carousel'}/>
-}
-
-function Carousel({images, title, speed, openShowcase}) {
-    return (
-        <div className="carousel-wrapper" onClick={() => openShowcase(images, title)}>
-            <div className="carousel-overlay">
-                <div className="modal-title">{title}</div>
-            </div>
-            <div className="carousel-track" style={{animation: `carousel-scroll ${speed}s linear infinite`}}>
-                {images.map((image, i) => renderCarouselImage(image, i))}
-                {images.map((image, i) => renderCarouselImage(image, i))}
-            </div>
-        </div>
-    )
-}
-
 function useResize(id, calculations) {
     const [size, setSize] = useState({width: 0, height: 0});
 
@@ -124,7 +46,7 @@ function useResize(id, calculations) {
     return size;
 }
 
-function ModalContent({src, toggleModal}){
+function ModalContent({src, toggleModal}) {
     const srcTitle = src[0];
     const srcImage = src[1];
     const srcDesc = src[2];
@@ -149,20 +71,34 @@ function ModalContent({src, toggleModal}){
     const [showcaseImages, setShowcaseImages] = useState(null);
     const [showcaseTitle, setShowcaseTitle] = useState("");
     const [showcaseHeader, setShowcaseHeader] = useState(null);
+    const [showcaseFooter, setShowcaseFooter] = useState(null);
 
     const handleOpenShowcase = (images, title) => {
         setOpenShowcase(!openShowcase);
         setShowcaseImages(images);
         if(title === 'Thumbnails') setShowcaseImages(ThumbnailShowcase);
         if(title === 'Ellis Tom' || title === 'More Clients' || title === 'Sunset Media Wave'){
+            if(title === 'More Clients'){
+                setShowcaseFooter(images[images.length-1]);
+            }
             setShowcaseHeader(images[0]);
         } else {
             setShowcaseHeader(null);
+            setShowcaseFooter(null);
         }
         setShowcaseTitle(title);
     }
 
     switch (srcTitle){
+        case 'About Me':
+            return (
+                <>
+                    <ModalHeader title={srcTitle} image={srcImage} toggleModal={toggleModal}/>
+                    <div className="modal" id={"about-me"}>
+                        <AboutMeModal/>
+                    </div>
+                </>
+            );
         case 'A Digital Duck':
             return (
                 <>
@@ -172,7 +108,7 @@ function ModalContent({src, toggleModal}){
                             width: resizeDuck.width,
                             height: resizeDuck.height
                         }}/>
-                        <ModalImage srcImage={DuckImage} type={'subImage'}/>
+                        <Image srcImage={DuckImage} type={'subImage'}/>
                     </div>
                 </>
             );
@@ -190,7 +126,7 @@ function ModalContent({src, toggleModal}){
                             </>
                         )}
                         {openShowcase && (
-                            <ModalShowcase images={showcaseImages} toggleShowcase={handleOpenShowcase}/>
+                            <Showcase images={showcaseImages} toggleShowcase={handleOpenShowcase}/>
                         )}
                     </div>
                 </>
@@ -212,7 +148,7 @@ function ModalContent({src, toggleModal}){
                             </>
                         )}
                         {openShowcase && (
-                            <ModalShowcase images={showcaseImages} toggleShowcase={handleOpenShowcase} headerImage={showcaseHeader}/>
+                            <Showcase images={showcaseImages} toggleShowcase={handleOpenShowcase} headerImage={showcaseHeader} footerImage={showcaseFooter}/>
                         )}
                     </div>
                 </>
@@ -223,7 +159,7 @@ function ModalContent({src, toggleModal}){
                     <ModalHeader title={"Progress Assessment Scheduling Calendar"} image={srcImage}
                                  toggleModal={toggleModal}/>
                     <div className="modal" id="youtube">
-                        <ModalImage srcImage={PASCImage}/>
+                        <Image srcImage={PASCImage}/>
                         <iframe className="youtube-video" title="youtube-video" src={srcLink} style={{
                             width: resizeVideo.width,
                             minHeight: resizeVideo.height

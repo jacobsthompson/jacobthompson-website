@@ -1,7 +1,6 @@
 import '../stylesheets/header.css'
 
-export default function Header({title, subtitle}){
-
+export function Links(){
     const links = ['https://www.linkedin.com/in/jacob-thompson-346b422ab/', 'https://github.com/jacobsthompson']
 
     const handleClick = (link) => {
@@ -14,7 +13,30 @@ export default function Header({title, subtitle}){
         window.location.href = "mailto:jacob.s.thompson@icloud.com?subject=I Saw Your Website";
     }
 
-    return(
+    return (
+        <div className="icons-wrapper">
+            <div className="icon-wrapper">
+                <img className="icon" src={'/assets/icons/linkedin.png'} onClick={() => handleClick(links[0])} alt=""/>
+                <div className="icon-label">LinkedIn</div>
+            </div>
+
+            <div className="icon-wrapper">
+                <img className="icon" src={'/assets/icons/mail.svg'} onClick={handleMail} alt=""/>
+                <div className="icon-label">Email</div>
+            </div>
+
+            <div className="icon-wrapper">
+                <img className="icon" src={'/assets/icons/github.svg'} onClick={() => handleClick(links[1])} alt=""/>
+                <div className="icon-label">GitHub</div>
+            </div>
+        </div>
+    );
+}
+
+export default function Header({title, subtitle}) {
+
+
+    return (
         <div className="header-container">
             <div className="header">
                 <div className="section center">
@@ -22,22 +44,7 @@ export default function Header({title, subtitle}){
                     <div className="header-subtext">{subtitle}</div>
                 </div>
             </div>
-            <div className="icons-wrapper">
-                <div className="icon-wrapper">
-                    <img className="icon" src={'/assets/icons/linkedin.png'} onClick={() => handleClick(links[0])} alt=""/>
-                    <div className="icon-label">LinkedIn</div>
-                </div>
-
-                <div className="icon-wrapper">
-                    <img className="icon" src={'/assets/icons/mail.svg'} onClick={handleMail} alt=""/>
-                    <div className="icon-label">Email</div>
-                </div>
-
-                <div className="icon-wrapper">
-                    <img className="icon" src={'/assets/icons/github.svg'} onClick={() => handleClick(links[1])} alt=""/>
-                    <div className="icon-label">GitHub</div>
-                </div>
-            </div>
+            <Links/>
         </div>
     );
 }

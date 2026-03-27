@@ -15,6 +15,7 @@ function Planet({planetCount, src, orbitRadius, delayIndex, size = 100, isPaused
     const srcYear = src[3];
     const srcLink = src[4];
     const srcLinkType = src[5];
+    const srcType = src[6];
 
     setTimeout(() => {
         const newDuration = 240;
@@ -82,7 +83,7 @@ function Planet({planetCount, src, orbitRadius, delayIndex, size = 100, isPaused
             </div>
             {showInfo &&(
                 <div className="planet-card-wrapper">
-                    <InfoCard title={srcTitle} year={srcYear} description={srcDesc}/>
+                    <InfoCard title={srcTitle} year={srcYear} description={srcDesc} type={srcType} linkType={srcLinkType}/>
                 </div>
             )}
         </div>
