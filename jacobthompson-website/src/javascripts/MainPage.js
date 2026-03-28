@@ -6,6 +6,7 @@ import Planets from "./Planet";
 import Modal from "./Modal";
 import {MobileInfoCards} from "./InfoCard";
 import '../stylesheets/mainpage.css';
+import {JTWatermark} from "./Watermark";
 
 const srcs = [
     ['Daily Dominos', 'assets/planets/planet-Domino.png', 'A mexican train dominos inspired Web Daily Game. Connect all 16 dominos as quickly as possible. Intuitive user interactions, satisfying gameplay, clean UI/UX, and a comprehensive placement validation algorithm make this my best work. Programmed in React and Javascript.', '2026', 'https://dailydominos.com/', 'external', 'Coding'],
@@ -89,6 +90,7 @@ export default function MainPage() {
             )}
             <Modal src={modalSrc} toggleModal={handleToggleModal} toggled={toggleModal}/>
             <Stars count={500} randomizer={starRandomizedValue}/>
+            <JTWatermark/>
         </div>
     );
 }
