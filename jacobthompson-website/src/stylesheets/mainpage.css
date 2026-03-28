@@ -20,6 +20,7 @@
     min-height: 50vh;
     position: relative;
     display: flex;
+    justify-content: center;
     align-items: center;
     z-index: 1;
 
@@ -28,16 +29,4 @@
 
 .mobile-projects {
     z-index: 10;
-}
-
-
-.mobile-title {
-    width: fit-content;
-    padding: 10px 40px;
-    background-color: #0a0a0a;
-    border: 2px hidden white;
-    color: #fff;
-    margin: -3rem auto 2rem auto;
-    font-size: 1.75rem;
-    font-weight: bold;
 }

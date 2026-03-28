@@ -45,6 +45,8 @@
     flex-direction: column;
     width: 45rem;
     height: 45rem;
+    max-width: 45rem;
+    max-height: 45rem;
     box-sizing: border-box;
     padding: 20px;
     gap: 20px;
@@ -79,16 +81,6 @@
     box-shadow: 0 0 5px 2px white;
 }
 
-@keyframes modal-expand {
-    0% { width: 200px; height: 100px; }
-    100% {width: 45rem; height: 45rem; }
-}
-
-@keyframes fade-in {
-    0% { opacity: 0 }
-    100% {opacity: 1}
-}
-
 /*SPECIAL CASES*/
 
 .digital-duck {
@@ -113,7 +105,8 @@
 /*MODAL HEADER*/
 
 .modal-header {
-    width: 100%;
+    width: fit-content;
+    max-width: 45rem;
     height: 2.5rem;
 
     display: grid;
@@ -182,6 +175,18 @@
     cursor: pointer;
 }
 
+/*ANIMATIONS*/
+
+@keyframes modal-expand {
+    0% { width: 0; height: 0; }
+    100% {width: 45rem; height: 45rem; }
+}
+
+@keyframes fade-in {
+    0% { opacity: 0 }
+    100% {opacity: 1}
+}
+
 @keyframes header-expand {
     0% { width: 200px; }
     100% {width: 45rem; }
@@ -189,7 +194,7 @@
 
 /*SCREEN SIZE*/
 
-@media screen and (max-width: 800px), (max-height: 800px) {
+@media screen and (max-width: 800px) {
     .modal{
         max-width: 90vw;
         max-height: 90vh;
@@ -201,7 +206,7 @@
 
     @keyframes modal-expand {
         0% { width: 0; height: 0; }
-        100% {width: 90vw; height: 90vh; }
+        100% {width: 90vw; height: 45rem; }
     }
 
     @keyframes header-expand {
@@ -210,14 +215,34 @@
     }
 }
 
-@media screen and (max-width: 500px), (max-height: 500px) {
+@media screen and (max-width: 500px){
     .modal{
         max-width: 90vw;
         max-height: 80vh;
     }
 
+    .modal-header{
+        max-width: 90vw;
+    }
+
     @keyframes modal-expand {
         0% { width: 0; height: 0; }
         100% {width: 90vw; height: 80vh; }
+    }
+
+    @keyframes header-expand {
+        0% { width: 2vw; }
+        100% {width: 90vw; }
+    }
+}
+
+@media screen and (max-height: 800px){
+    .modal{
+        max-height: 90vh;
+    }
+
+    @keyframes modal-expand {
+        0% { width: 0; height: 0; }
+        100% {width: min(45rem, 90vw); height: 80vh; }
     }
 }

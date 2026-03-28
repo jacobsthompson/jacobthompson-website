@@ -6,8 +6,6 @@ export function JTWatermark(){
         </svg>
     );
 
-
-
     return (
         <div className="watermark-bar" style={{
             display: "flex",
@@ -33,6 +31,18 @@ export function JTWatermark(){
                 textShadow: "0 0 5px black",
                 cursor: "pointer"
             }}>
+                <style>
+                    {`
+                    @font-face {
+                        font-family: "Karrik";
+                        src: local("Karrik-Regular"), url("https://res.cloudinary.com/dwrjdndw4/image/upload/assets/Karrik-Regular.ttf") format("woff2");
+                     }
+                    
+                    .watermark-text {
+                        font-family: "Karrik", sans-serif;
+                    }
+                    `}
+                </style>
                 <WatermarkLogo/>
                 <div className="watermark-text">a web project by jacob thompson.</div>
             </div>

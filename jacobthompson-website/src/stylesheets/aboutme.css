@@ -6,32 +6,32 @@
 
     display: flex;
     flex-direction: column;
-    gap: 4.5rem;
+    gap: 5.5rem;
 }
 
-.about-container{
+.profile-container{
     display: grid;
-    grid-template-columns: repeat(2,1fr);
+    grid-template-columns: 2fr 1fr;
+    grid-gap: 2rem;
     box-sizing: border-box;
-    height: 40%;
-    align-items: center;
+    height: 100%;
+    align-items: start;
 }
 
 .about-wrapper {
     align-self: start;
     justify-self: left;
+    height: 100%;
+    min-width: 10rem;
 }
 
 .about-header {
     display: flex;
     flex-direction: row;
-
     width: fit-content;
-
     align-items: baseline;
     gap: 1rem;
-
-    padding-bottom: 0.5rem;
+    padding-bottom: 0.25rem;
     border: 2px white;
     border-style: none none solid none;
 }
@@ -39,78 +39,110 @@
 .about-title {
     text-align: left;
     font-weight: bold;
-    font-size: 1.75rem;
+    font-size: 1.5rem;
 }
 
 .about-subtitle {
     text-align: left;
-    font-weight: bold;
+    font-weight: normal;
     font-size: 1rem;
-    color: #cccccc;
+    color: #ccc;
 }
 
 .about-text {
     display: flex;
     flex-direction: column;
-    gap: 0.25rem;
 
-    list-style-type: disc;
-    list-style-position: inside;
-
-    padding-top: 1rem;
+    padding-top: 0.75rem;
     text-align: left;
     justify-self: left;
+    font-family: Abordage, sans-serif;
     font-weight: normal;
-    font-size: 1.25rem;
+    font-size: 0.9rem;
 }
 
+/*PHOTO*/
 
 .photo-wrapper {
     display: flex;
     flex-direction: column;
     justify-self: right;
+    width: 100%;
     height: 100%;
-    min-height: 0;
+    min-width: 8rem;
 }
 
 .modal-image.about-me {
-    min-height: 100%;
+    width: 100%;
     min-width: 0;
 }
+
+.icon-wrapper.about-me {
+    width: 100%;
+}
+
+.icon-label.about-me {
+    display: none;
+}
+
 
 /*SKILLS*/
 
 .skills-container{
     height: 100%;
+    display: flex;
+    flex-direction: column;
 }
 
 .skills-grid-wrapper{
+    width: 100%;
     justify-content: center;
-    padding-top: 2rem;
+    margin-top: auto;
 }
 
 .skills-grid{
     display: grid;
-    grid-template-columns: repeat(5,1fr);
-    grid-row-gap: 3rem;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 0.5rem;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    justify-content: center;
 }
 
 .skill{
+    display: flex;
+    flex-direction: column;
     transition: transform 0.2s ease;
+    transform-origin: center;
+    width: 100%;
+    height: fit-content;
+    align-items: center;
+}
+
+.skill-icon-wrapper {
+    position: relative;
+    height: 3rem;
 }
 
 .skill-icon {
+    position: absolute;
+    top: 25%;
+    left: 25%;
+    width: 50%;
+    height: 50%;
+}
+
+.blank-planet {
     filter: invert(1);
-    width: 4rem;
+    width: 100%;
+    height: 100%;
 }
 
 .skill-label {
     font-size: 1rem;
-    position: relative;
     white-space: nowrap;
     text-align: center;
     justify-self: center;
-    padding-top: 0.5rem;
 }
 
 
@@ -118,4 +150,24 @@
     transform: scale(1.25);
     filter: sepia(1) saturate(100) hue-rotate(40deg);
     cursor: pointer;
+}
+
+.about-me-info-card {
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+}
+
+@media screen and (max-width: 505px) {
+    .about-text {
+        font-size: 0.76rem;
+    }
+
+    .about-title {
+        font-size: 1rem;
+    }
+
+    .about-subtitle {
+        font-size: 0.8rem;
+    }
 }

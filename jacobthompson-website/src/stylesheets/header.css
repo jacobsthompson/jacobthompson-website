@@ -4,7 +4,7 @@
     width: 16rem;
     height: 4rem;
     background-color: #0a0a0a;
-    margin: 2rem auto 1rem auto;
+    margin: 2rem auto 2.5rem auto;
     z-index: 2;
     align-items: center;
 }
@@ -13,6 +13,7 @@
     width: 100%;
     height: 100%;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
 }
@@ -64,11 +65,12 @@
 
 .icon-wrapper {
     width: 4rem;
+    height: 1.5rem;
 }
 
 .icon {
     /*width: 1.5rem;*/
-    height: 1.5rem;
+    height: 100%;
     transition: transform 0.2s ease;
 }
 

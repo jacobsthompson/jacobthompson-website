@@ -84,7 +84,6 @@ export default function MainPage() {
             </div>
             { window.innerWidth <= safariMobileView && (
                 <div className="mobile-projects">
-                    <div className="mobile-title">Projects</div>
                     <MobileInfoCards srcs={mobileSrcs} toggleModal={handleToggleModal}/>
                 </div>
             )}

@@ -1,4 +1,5 @@
 import '../stylesheets/infocard.css';
+import {AboutMeModal} from "./AboutMe";
 
 export function MobileInfoCards({srcs, toggleModal}){
 
@@ -8,14 +9,21 @@ export function MobileInfoCards({srcs, toggleModal}){
 
     return (
         <div className="mobile-info-cards-wrapper">
+            <div className="mobile-title">Greetings.</div>
+            <div className="mobile-info-wrapper">
+                <div className="info-card" style={{paddingTop: "1.25rem"}}>
+                    <AboutMeModal/>
+                </div>
+            </div>
+            <div className="mobile-title">Projects</div>
             {srcs.map((planet, i) => (
-                <MobileInfoCard key={i} src={srcs[i]}  handleModal={handleModal}/>
+                <MobileInfoCard key={i} src={srcs[i]} handleModal={handleModal}/>
             ))}
         </div>
     );
 }
 
-function MobileInfoCard({src, handleModal}){
+function MobileInfoCard({src, handleModal}) {
 
     const srcTitle = src[0];
     const srcImage = src[1];

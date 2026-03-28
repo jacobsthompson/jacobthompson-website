@@ -20,7 +20,7 @@
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: scaleY(2.8) skewX(58deg) translate(-40%,-25%);
+    transform: skewX(30deg) scaleY(2.8) rotate(-0.5deg) translate(-40%,-25%);
     z-index: 5;
 
     padding: 10px 20px;

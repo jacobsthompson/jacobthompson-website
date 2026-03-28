@@ -1,6 +1,6 @@
 import '../stylesheets/header.css'
 
-export function Links(){
+export function Links({type = null}){
     const links = ['https://www.linkedin.com/in/jacob-thompson-346b422ab/', 'https://github.com/jacobsthompson']
 
     const handleClick = (link) => {
@@ -15,19 +15,19 @@ export function Links(){
 
     return (
         <div className="icons-wrapper">
-            <div className="icon-wrapper">
+            <div className={`icon-wrapper ${type}`}>
                 <img className="icon" src={'/assets/icons/linkedin.png'} onClick={() => handleClick(links[0])} alt=""/>
-                <div className="icon-label">LinkedIn</div>
+                <div className={`icon-label ${type}`}>LinkedIn</div>
             </div>
 
-            <div className="icon-wrapper">
+            <div className={`icon-wrapper ${type}`}>
                 <img className="icon" src={'/assets/icons/mail.svg'} onClick={handleMail} alt=""/>
-                <div className="icon-label">Email</div>
+                <div className={`icon-label ${type}`}>Email</div>
             </div>
 
-            <div className="icon-wrapper">
+            <div className={`icon-wrapper ${type}`}>
                 <img className="icon" src={'/assets/icons/github.svg'} onClick={() => handleClick(links[1])} alt=""/>
-                <div className="icon-label">GitHub</div>
+                <div className={`icon-label ${type}`}>GitHub</div>
             </div>
         </div>
     );
