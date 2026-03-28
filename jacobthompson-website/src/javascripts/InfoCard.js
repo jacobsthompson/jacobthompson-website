@@ -15,7 +15,7 @@ export function MobileInfoCards({srcs, toggleModal}){
     );
 }
 
-export function MobileInfoCard({src, handleModal}){
+function MobileInfoCard({src, handleModal}){
 
     const srcTitle = src[0];
     const srcImage = src[1];
@@ -41,6 +41,7 @@ export function MobileInfoCard({src, handleModal}){
         return (
             <div className="mobile-info-wrapper" onClick={() => handleClickEffect(srcTitle, srcLink, srcLinkType)}>
                 <div className="info-card">
+                    <InfoTabs type={srcType} linkType={srcLinkType}/>
                     <div className="info-header mobile">
                         <img className="info-image" src={srcImage} alt=""/>
                         <div className="info-title-header">
@@ -49,12 +50,6 @@ export function MobileInfoCard({src, handleModal}){
                         </div>
                     </div>
                     <div className="info-desc">{srcDesc}</div>
-                    <div className="info-tabs">
-                        <div className="info-tab">{srcType}</div>
-                    </div>
-                    <div className="info-tabs mobile">
-                        <div className="info-tab">{linkText}</div>
-                    </div>
                 </div>
             </div>
         );
@@ -62,8 +57,6 @@ export function MobileInfoCard({src, handleModal}){
 }
 
 export default function InfoCard({title, year, description, type, linkType}) {
-    const linkText = linkType === 'external' ? "Visit Site" : "View Popup";
-
     if (title) {
         return (
             <div className="info-wrapper">
@@ -74,11 +67,19 @@ export default function InfoCard({title, year, description, type, linkType}) {
                     </div>
                     <div className="info-desc">{description}</div>
                 </div>
-                <div className="info-tabs">
-                    <div className="info-tab">{type}</div>
-                    <div className="info-tab">{linkText}</div>
-                </div>
+                <InfoTabs type={type} linkType={linkType}/>
             </div>
         );
     }
+}
+
+function InfoTabs({type, linkType}){
+    const linkText = linkType === 'external' ? "External Website" : "Internal Popup";
+
+    return (
+        <div className="info-tabs">
+            <div className="info-tab">{type}</div>
+            <div className="info-tab">{linkText}</div>
+        </div>
+    );
 }

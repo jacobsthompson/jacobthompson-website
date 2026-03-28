@@ -1,6 +1,6 @@
 html, body {
     margin: 0;
-    padding: 0 0 1000px 0;
+    padding-bottom: 1000px;
     width: 100%;
     height: 100dvh;
     overflow: hidden;

@@ -10,7 +10,6 @@ export function JTWatermark(){
 
     return (
         <div className="watermark-bar" style={{
-            position: "relative",
             display: "flex",
             left: 0,
             bottom: 0,
@@ -18,8 +17,8 @@ export function JTWatermark(){
             height: "2rem",
             justifyContent: "center",
             alignItems: "center",
-            paddingBottom: "0.5rem",
-            zIndex: 10000,
+            paddingBottom: "1rem",
+            zIndex: 1,
         }}>
             <div onClick={() => window.open("https://www.jacobsthompson.com/")} style={{
                 display: "flex",
