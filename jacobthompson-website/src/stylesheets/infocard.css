@@ -98,7 +98,7 @@
     transition: scale 0.2s ease;
 }
 
-.mobile-info-wrapper:hover {
+.mobile-info-wrapper.project:hover {
     scale: 1.02;
     box-shadow: 0 0 5px 2px white;
     cursor: pointer;

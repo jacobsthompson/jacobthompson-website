@@ -47,7 +47,7 @@ function MobileInfoCard({src, handleModal}) {
 
     if(srcTitle) {
         return (
-            <div className="mobile-info-wrapper" onClick={() => handleClickEffect(srcTitle, srcLink, srcLinkType)}>
+            <div className="mobile-info-wrapper project" onClick={() => handleClickEffect(srcTitle, srcLink, srcLinkType)}>
                 <div className="info-card">
                     <InfoTabs type={srcType} linkType={srcLinkType}/>
                     <div className="info-header mobile">

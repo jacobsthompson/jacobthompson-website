@@ -48,7 +48,7 @@ function Skills() {
     return (
         <div className="skills-container">
             <div className="skills-grid-wrapper">
-                <div className="about-title" style={{textAlign: "center", marginTop: "1rem"}}>Skills</div>
+                <div className="about-title" style={{textAlign: "center"}}>Skills</div>
                 <div className="skills-grid">
                     {skillsList.map((skill, i) => (
                         <Skill key={i} title={skill[0]} image={skill[1]} link={skill[2]}/>
