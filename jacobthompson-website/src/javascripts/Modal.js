@@ -94,7 +94,7 @@ function ModalContent({src, toggleModal}) {
             return (
                 <>
                     <ModalHeader title={srcTitle} image={srcImage} toggleModal={toggleModal}/>
-                    <div className="modal" id={"about-me"}>
+                    <div className="modal about-me" id={"about-me"}>
                         <AboutMeModal/>
                     </div>
                 </>

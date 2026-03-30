@@ -8,6 +8,12 @@ export function AboutMeModal() {
     return (
         <div className="about-me-container">
             <div className="profile-container">
+                <div className="photo-container">
+                    <div className="photo-wrapper">
+                        <Image srcImage={Headshot} type={"about-me"}/>
+                        <Links type={"about-me"}/>
+                    </div>
+                </div>
                 <div className="about-wrapper">
                     <div className="about-header">
                         <div className="about-title">Jacob Thompson</div>
@@ -34,23 +40,24 @@ export function AboutMeModal() {
                         Thanks for viewing my website, and please take a look at my projects!
                     </div>
                 </div>
-                <div className="photo-wrapper">
-                    <Image srcImage={Headshot} type={"about-me"}/>
-                    <Links type={"about-me"}/>
-                    <Skills/>
-                </div>
             </div>
+            <Skills/>
         </div>
     );
 }
 
 function Skills() {
     return (
-        <div className="skills-container">
+        <div className="skills-wrapper">
+            <div className="about-title skills" style={{textAlign: "center"}}>Skills</div>
             <div className="skills-grid-wrapper">
-                <div className="about-title" style={{textAlign: "center"}}>Skills</div>
                 <div className="skills-grid">
-                    {skillsList.map((skill, i) => (
+                    {skillsList.slice(0, skillsList.length / 2).map((skill, i) => (
+                        <Skill key={i} title={skill[0]} image={skill[1]} link={skill[2]}/>
+                    ))}
+                </div>
+                <div className="skills-grid">
+                    {skillsList.slice(skillsList.length / 2, skillsList.length).map((skill, i) => (
                         <Skill key={i} title={skill[0]} image={skill[1]} link={skill[2]}/>
                     ))}
                 </div>
@@ -83,11 +90,12 @@ const blankPlanet = 'assets/planets/planet-Blank.png';
 const skillsList = [
     ["React", 'assets/icons/react.svg', "https://react.dev/"],
     ["Javascript", 'assets/icons/javascript.svg', "https://developer.mozilla.org/en-US/docs/Web/JavaScript"],
+    ["HTML", 'assets/icons/html.svg', "https://html.spec.whatwg.org/multipage/"],
+    ["CSS", 'assets/icons/css.svg', "https://html.spec.whatwg.org/multipage/"],
     ["Python", 'assets/icons/python.svg', "https://www.python.org/doc/"],
-    ["HTML/CSS", 'assets/icons/html-css.svg', "https://html.spec.whatwg.org/multipage/"],
     ["Figma", 'assets/icons/figma.svg', "https://www.figma.com/"],
     ["Adobe", 'assets/icons/adobe.svg', "https://www.adobe.com/creativecloud/design.html"],
-    // ["WordPress", 'assets/planets/planetX.png', "https://wordpress.com/"],
-    // ["Flask", 'assets/planets/planetX.png', "https://flask.palletsprojects.com/en/stable/"],
-    // ["PostgreSQL", 'assets/planets/planetX.png', "https://www.postgresql.org/"],
+    ["WordPress", 'assets/planets/planetX.png', "https://wordpress.com/"],
+    ["Flask", 'assets/planets/planetX.png', "https://flask.palletsprojects.com/en/stable/"],
+    ["PostgreSQL", 'assets/planets/planetX.png', "https://www.postgresql.org/"],
 ]

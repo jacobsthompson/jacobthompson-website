@@ -175,6 +175,13 @@
     cursor: pointer;
 }
 
+/*ABOUT ME*/
+
+/*.modal.about-me {*/
+/*    max-width: 35rem;*/
+/*    max-height: 35rem;*/
+/*}*/
+
 /*ANIMATIONS*/
 
 @keyframes modal-expand {
@@ -244,5 +251,17 @@
     @keyframes modal-expand {
         0% { width: 0; height: 0; }
         100% {width: min(45rem, 90vw); height: 80vh; }
+    }
+}
+
+/*SMALLER PHONES*/
+
+@media screen and (max-width: 400px){
+    .modal{
+        max-height: 75vh;
+    }
+
+    .modal-header-text.title {
+        font-size: 0.8rem;
     }
 }

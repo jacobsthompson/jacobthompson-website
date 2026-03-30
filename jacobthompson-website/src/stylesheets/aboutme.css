@@ -1,33 +1,29 @@
 /*ABOUT ME SECTION*/
 
 .about-me-container{
-    width: 100%;
-    height: 100%;
-
     display: flex;
     flex-direction: column;
-    gap: 2rem;
+    width: 100%;
+    height: 100%;
 }
 
 .profile-container{
-    display: grid;
-    grid-template-columns: 3fr 2fr;
-    grid-gap: 2rem;
-    box-sizing: border-box;
-    height: 100%;
-    align-items: start;
+    width: 100%;
+    height: fit-content;
 }
 
-.about-wrapper {
-    align-self: start;
-    justify-self: left;
-    height: 100%;
-    min-width: 10rem;
+.profile-container::after {
+    content: "";
+    display: table;
+    clear: both;
 }
+
+/*ABOUT ME TEXT*/
+
+.about-wrapper{}
 
 .about-header {
     display: flex;
-    flex-direction: row;
     width: fit-content;
     align-items: baseline;
     gap: 1rem;
@@ -37,80 +33,85 @@
 }
 
 .about-title {
-    text-align: left;
     font-weight: bold;
-    font-size: 1.5rem;
+    font-size: clamp(0.9rem,3vw,1.5rem);
     white-space: nowrap;
 }
 
 .about-subtitle {
-    text-align: left;
-    font-weight: normal;
-    font-size: 1rem;
+    font-size: clamp(0.6rem,3vw,1rem);
     color: #ccc;
     white-space: nowrap;
 }
 
 .about-text {
-    display: flex;
-    flex-direction: column;
-
+    font-family: Abordage, sans-serif;
+    font-size: clamp(0.75rem,2.7vw,0.9rem);
     padding-top: 0.75rem;
     text-align: left;
-    justify-self: left;
-    font-family: Abordage, sans-serif;
-    font-weight: normal;
-    font-size: 0.9rem;
 }
 
 /*PHOTO*/
 
+.photo-container {
+    width: 40%;
+    max-width: 14rem;
+    float: right;
+    margin: 0 0 1rem 2rem;
+}
+
 .photo-wrapper {
     display: flex;
     flex-direction: column;
-    justify-self: right;
-    width: 100%;
-    height: 100%;
-    min-width: 8rem;
+    height: fit-content;
+    align-items: end;
 }
 
-.modal-image.about-me {
+.modal-image.about-me {}
+
+/*LINKS*/
+
+.icons-wrapper.about-me {
     width: 100%;
-    min-width: 0;
 }
 
 .icon-wrapper.about-me {
     width: 100%;
+    height: clamp(1rem,3vw,1.5rem);
 }
 
 .icon-label.about-me {
     display: none;
 }
 
-
 /*SKILLS*/
 
-.skills-container{
-    height: 100%;
+.skills-wrapper {
     display: flex;
     flex-direction: column;
+    height: 100%;
+    padding-bottom: 1rem;
 }
 
 .skills-grid-wrapper{
-    width: 100%;
-    justify-content: center;
-    margin-top: 1.5rem;
-    margin-bottom: auto;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    justify-content: space-around;
+    gap: 1rem;
+
+}
+
+.about-title.skills {
+    margin-top: 0.5rem;
+    margin-bottom: 1rem;
 }
 
 .skills-grid{
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-row-gap: 1rem;
-    grid-column-gap: 1.5rem;
-    margin-top: 1.5rem;
-    margin-bottom: 1rem;
-    justify-content: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    gap: 5%;
 }
 
 .skill{
@@ -119,15 +120,11 @@
     gap: 0.25rem;
     transition: transform 0.2s ease;
     transform-origin: center;
-    width: auto;
-    height: fit-content;
-    align-items: center;
+    max-width: 5rem;
 }
 
 .skill-icon-wrapper {
     position: relative;
-    width: 3rem;
-    height: 3rem;
 }
 
 .skill-icon {
@@ -135,50 +132,20 @@
     top: 25%;
     left: 25%;
     width: 50%;
-    height: 50%;
 }
 
 .blank-planet {
     filter: invert(1);
     width: 100%;
-    height: 100%;
 }
 
 .skill-label {
-    font-size: 0.9rem;
+    font-size: clamp(0.5rem,2.1vw,0.9rem);
     white-space: nowrap;
-    text-align: center;
-    justify-self: center;
 }
-
 
 .skill:hover {
     transform: scale(1.25);
     filter: sepia(1) saturate(100) hue-rotate(40deg);
     cursor: pointer;
-}
-
-.about-me-info-card {
-    height: 100%;
-    display: flex;
-    flex-direction: row;
-}
-
-@media screen and (max-width: 500px) {
-    .about-text {
-        font-size: 0.76rem;
-    }
-
-    .about-title {
-        font-size: 1rem;
-    }
-
-    .about-subtitle {
-        font-size: 0.8rem;
-    }
-
-
-    .skill-label {
-        font-size: 0.6rem;
-    }
 }

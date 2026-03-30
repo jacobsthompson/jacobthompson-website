@@ -14,7 +14,7 @@ export function Links({type = null}){
     }
 
     return (
-        <div className="icons-wrapper">
+        <div className={`icons-wrapper ${type}`}>
             <div className={`icon-wrapper ${type}`}>
                 <img className="icon" src={'/assets/icons/linkedin.png'} onClick={() => handleClick(links[0])} alt=""/>
                 <div className={`icon-label ${type}`}>LinkedIn</div>

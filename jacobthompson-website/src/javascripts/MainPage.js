@@ -34,7 +34,7 @@ const mobileSrcs = [
 
 const starRandomizedValue = new Date().toString();
 
-function usePageScale(maxWidth = 1512, maxHeight = 860, minWidth = 320, minHeight = 320, minScale = 0.325){
+function usePageScale(maxWidth = 1663, maxHeight = 860, minWidth = 320, minHeight = 320, minScale = 0.325){
     const [scale, setScale] = useState(1);
 
     useEffect(() => {
@@ -77,7 +77,7 @@ export default function MainPage() {
 
     return (
         <div className="main-page">
-            <Header title={"jacob thompson"} subtitle={"web developer"}/>
+            <Header title={window.innerWidth} subtitle={"web developer"}/>
             <div className="center-content-container">
                 <Galaxy scale={scale} toggleModal={handleToggleModal}/>
                 <Planets srcPlanets={srcs} toggleModal={handleToggleModal} isPaused={toggleModal} scale={scale}/>
