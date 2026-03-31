@@ -5,16 +5,15 @@
 
 .modal-background {
     display: flex;
-    position: absolute;
+    position: fixed;
     justify-content: center;
     align-items: center;
     width: 100dvw;
     height: 100dvh;
     top: 0;
     left: 0;
-    z-index: 12;
+    z-index: 100;
     background-color: rgba(10,10,10,0.9);
-    /*padding-bottom: 1000px;*/
 }
 
 .modal-wrapper {
@@ -102,6 +101,10 @@
 .river-cleanup {
     min-width: 300px;
     min-height: 342px;
+}
+
+.modal.showcase {
+    justify-content: start;
 }
 
 /*MODAL HEADER*/

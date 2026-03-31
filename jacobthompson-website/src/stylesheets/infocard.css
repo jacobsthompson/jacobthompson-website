@@ -155,13 +155,12 @@
 
 .galaxy-wrapper:hover .info-wrapper.about-me{
     transform: skewX(30deg) scaleY(2.857) translate(-35.38%,-12.6%) scale(0.869);
-    animation: fadeIn 0.6s ease forwards;
+    animation: fadeIn 0.4s ease forwards;
 }
 
 .info-wrapper.about-me {
     opacity: 0;
     transform: skewX(30deg) scaleY(2.857) translate(-35.38%,-12.6%) scale(0.1);
-    /*transition: transform 0.4s ease;*/
     z-index: 5;
 }
 

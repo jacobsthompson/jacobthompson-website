@@ -1,5 +1,6 @@
 import {useState} from "react";
 import "../stylesheets/showcase.css"
+import ReactDOM from "react-dom";
 
 function preloadImages(srcs) {
   return Promise.all(srcs.map(src => new Promise((resolve) => {
@@ -21,11 +22,12 @@ export function Image({srcImage, type = "", turnOffClick = false}) {
 
     return (
         <>
-            {showingFullScreen && (
+            {showingFullScreen && ReactDOM.createPortal(
                 <div className="modal-background fi">
                     <div className="clickable-background fi" onClick={() => handleFullScreen()}/>
                     <img className="full-image" src={srcImage} onClick={() => handleFullScreen()} alt={""}/>
-                </div>
+                </div>,
+                document.body
             )}
             <img className={`modal-image ${turnOffClick} ${type}`} onClick={() => handleFullScreen()} src={srcImage} alt={""}/>
         </>

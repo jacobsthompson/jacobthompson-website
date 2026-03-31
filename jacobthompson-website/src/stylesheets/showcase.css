@@ -3,7 +3,6 @@
 .full-image {
     max-width: 90vw;
     max-height: 90vh;
-    z-index: 100;
     cursor: zoom-out;
 }
 

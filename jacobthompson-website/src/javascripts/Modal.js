@@ -116,7 +116,7 @@ function ModalContent({src, toggleModal}) {
             return (
                 <>
                     <ModalHeader title={srcTitle} image={srcImage} toggleModal={toggleModal} subPage={openShowcase} subPageTitle={showcaseTitle} toggleSubpage={handleOpenShowcase}/>
-                    <div className="modal">
+                    <div className="modal showcase">
                         {!openShowcase && (
                             <>
                                 <Carousel images={Fliers} speed={60} title={"Fliers"} openShowcase={handleOpenShowcase}/>
@@ -135,7 +135,7 @@ function ModalContent({src, toggleModal}) {
             return (
                 <>
                     <ModalHeader title={srcTitle} image={srcImage} toggleModal={toggleModal} subPage={openShowcase} subPageTitle={showcaseTitle} toggleSubpage={handleOpenShowcase}/>
-                    <div className="modal">
+                    <div className="modal showcase">
                         {!openShowcase && (
                             <>
                                 <Carousel images={SunsetMediaWave} speed={60} title={"Sunset Media Wave"}
