@@ -10,11 +10,13 @@ function preloadImages(srcs) {
   })));
 }
 
-export function Image({srcImage, type = ""}) {
+export function Image({srcImage, type = "", turnOffClick = false}) {
     const [showingFullScreen, setShowingFullscreen] = useState(false);
 
     const handleFullScreen = () => {
-        setShowingFullscreen(!showingFullScreen);
+        if(!turnOffClick){
+            setShowingFullscreen(!showingFullScreen);
+        }
     }
 
     return (
@@ -25,7 +27,7 @@ export function Image({srcImage, type = ""}) {
                     <img className="full-image" src={srcImage} onClick={() => handleFullScreen()} alt={""}/>
                 </div>
             )}
-            <img className={`modal-image ${type}`} onClick={() => handleFullScreen()} src={srcImage} alt={""}/>
+            <img className={`modal-image ${turnOffClick} ${type}`} onClick={() => handleFullScreen()} src={srcImage} alt={""}/>
         </>
     );
 }

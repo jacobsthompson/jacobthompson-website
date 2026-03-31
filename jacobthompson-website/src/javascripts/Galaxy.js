@@ -1,9 +1,10 @@
 import '../stylesheets/galaxy.css';
+import {AboutMeInfoCard} from "./InfoCard";
 
 export default function Galaxy({scale, toggleModal}){
     return (
         <div className="galaxy-wrapper" style={{scale: scale}} onClick={() => toggleModal(["About Me"])}>
-            <div className="galaxy-label">Greetings.</div>
+            <AboutMeInfoCard/>
             <div className="galaxy-mask">
                 <div className="galaxy-background-counter-rotation">
                     <div className="galaxy-background"/>

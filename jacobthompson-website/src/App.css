@@ -4,5 +4,4 @@ html, body {
     height: 100dvh;
     overflow: hidden;
     user-select: none;
-    /*font-size: calc(16px - 1vmin);*/
 }

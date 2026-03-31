@@ -3,12 +3,11 @@
 .full-image {
     max-width: 90vw;
     max-height: 90vh;
-    z-index: 5;
+    z-index: 100;
     cursor: zoom-out;
 }
 
 .modal-background.fi {
-    z-index: 5;
     background-color: rgba(10,10,10,0.8);
 }
 

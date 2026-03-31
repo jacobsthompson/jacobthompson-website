@@ -49,6 +49,7 @@
     font-size: clamp(0.75rem,2.7vw,0.9rem);
     padding-top: 0.75rem;
     text-align: left;
+    user-select: text;
 }
 
 /*PHOTO*/
@@ -148,4 +149,15 @@
     transform: scale(1.25);
     filter: sepia(1) saturate(100) hue-rotate(40deg);
     cursor: pointer;
+}
+
+
+@media screen and (max-width: 420px){
+    .about-title{
+        font-size: 0.7rem;
+    }
+
+    .about-subtitle {
+        font-size: 0.5rem;
+    }
 }

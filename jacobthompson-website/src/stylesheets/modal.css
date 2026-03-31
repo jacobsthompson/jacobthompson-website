@@ -14,7 +14,7 @@
     left: 0;
     z-index: 12;
     background-color: rgba(10,10,10,0.9);
-    padding-bottom: 1000px;
+    /*padding-bottom: 1000px;*/
 }
 
 .modal-wrapper {
@@ -37,7 +37,7 @@
     width: 100dvw;
     height: 100dvh;
     z-index: 11;
-    padding-bottom: 1000px;
+    /*padding-bottom: 1000px;*/
 }
 
 .modal {
@@ -57,6 +57,8 @@
 
     opacity: 0;
     animation: modal-expand var(--animation-time) cubic-bezier(0.16, 1, 0.3, 1) forwards, fade-in 0.6s ease forwards var(--fade-time);
+
+    z-index: 9;
 }
 
 .modal-title {
@@ -76,7 +78,7 @@
     border: 1px solid;
 }
 
-.modal-image:hover {
+.modal-image.false:hover {
     cursor: zoom-in;
     box-shadow: 0 0 5px 2px white;
 }

@@ -4,13 +4,13 @@ import "../stylesheets/aboutme.css"
 import "../stylesheets/infocard.css"
 import {Links} from "./Header";
 
-export function AboutMeModal() {
+export function AboutMeModal({turnOffClick = false}) {
     return (
         <div className="about-me-container">
             <div className="profile-container">
                 <div className="photo-container">
                     <div className="photo-wrapper">
-                        <Image srcImage={Headshot} type={"about-me"}/>
+                        <Image srcImage={Headshot} type={"about-me"} turnOffClick={turnOffClick}/>
                         <Links type={"about-me"}/>
                     </div>
                 </div>
@@ -70,7 +70,11 @@ function Skill({title, image, link}) {
 
     const handleClick = (link) => {
         if (link) {
-            window.open(link);
+            if(window.innerWidth <= 500){
+                window.open(link, "_self");
+            } else {
+                window.open(link);
+            }
         }
     }
 
@@ -95,7 +99,7 @@ const skillsList = [
     ["Python", 'assets/icons/python.svg', "https://www.python.org/doc/"],
     ["Figma", 'assets/icons/figma.svg', "https://www.figma.com/"],
     ["Adobe", 'assets/icons/adobe.svg', "https://www.adobe.com/creativecloud/design.html"],
-    ["WordPress", 'assets/planets/planetX.png', "https://wordpress.com/"],
-    ["Flask", 'assets/planets/planetX.png', "https://flask.palletsprojects.com/en/stable/"],
-    ["PostgreSQL", 'assets/planets/planetX.png', "https://www.postgresql.org/"],
+    ["WordPress", 'assets/icons/wordpress.svg', "https://wordpress.com/"],
+    ["Flask", 'assets/icons/flask.svg', "https://flask.palletsprojects.com/en/stable/"],
+    ["PostgreSQL", 'assets/icons/postgresql.svg', "https://www.postgresql.org/"],
 ]

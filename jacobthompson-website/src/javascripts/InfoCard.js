@@ -1,5 +1,7 @@
 import '../stylesheets/infocard.css';
 import {AboutMeModal} from "./AboutMe";
+import {Headshot} from "./Images";
+import {Image} from "./Showcase";
 
 export function MobileInfoCards({srcs, toggleModal}){
 
@@ -12,7 +14,7 @@ export function MobileInfoCards({srcs, toggleModal}){
             <div className="mobile-title">Greetings.</div>
             <div className="mobile-info-wrapper">
                 <div className="info-card" style={{paddingTop: "1.25rem"}}>
-                    <AboutMeModal/>
+                    <AboutMeModal turnOffClick={true}/>
                 </div>
             </div>
             <div className="mobile-title">Projects</div>
@@ -38,7 +40,7 @@ function MobileInfoCard({src, handleModal}) {
     const handleClickEffect = (title, link, linkType) => {
         if(linkType) {
             if(link && linkType === 'external'){
-                window.open(link);
+                window.open(link, "_self");
             } else if(linkType === 'internal'){
                 handleModal(src);
             }
@@ -64,6 +66,26 @@ function MobileInfoCard({src, handleModal}) {
     }
 }
 
+export function AboutMeInfoCard(){
+    return (
+        <div className="info-wrapper about-me">
+            <div className="info-card about-me">
+                <div className="about-me-info">
+                    <div className="info-header">
+                        <div className="info-title about-me">Jacob Thompson</div>
+                        <div className="info-year"></div>
+                    </div>
+                    <div className="info-desc">
+                        Greetings. My name is Jacob, and I am a Web Developer and Designer. Welcome to my website! Click on this to learn more about me, and click on the planets to see my work.
+                    </div>
+                </div>
+                <Image srcImage={Headshot} type={"about-me"} turnOffClick={true}/>
+            </div>
+            <InfoTabs type={"About Me"} linkType={""}/>
+        </div>
+    );
+}
+
 export default function InfoCard({title, year, description, type, linkType}) {
     if (title) {
         return (
@@ -82,12 +104,14 @@ export default function InfoCard({title, year, description, type, linkType}) {
 }
 
 function InfoTabs({type, linkType}){
-    const linkText = linkType === 'external' ? "External Website" : "Internal Popup";
+    const linkText = linkType === 'external' ? "External Website" : (linkType === 'internal' ? "Internal Popup" : "");
 
     return (
         <div className="info-tabs">
             <div className="info-tab">{type}</div>
-            <div className="info-tab">{linkText}</div>
+            {linkText !== "" && (
+                <div className="info-tab">{linkText}</div>
+            )}
         </div>
     );
 }

@@ -77,7 +77,7 @@ export default function MainPage() {
 
     return (
         <div className="main-page">
-            <Header title={window.innerWidth} subtitle={"web developer"}/>
+            <Header title={"jacob thompson"} subtitle={"web developer"}/>
             <div className="center-content-container">
                 <Galaxy scale={scale} toggleModal={handleToggleModal}/>
                 <Planets srcPlanets={srcs} toggleModal={handleToggleModal} isPaused={toggleModal} scale={scale}/>
