@@ -2,17 +2,14 @@ import {useState} from "react";
 import "../stylesheets/showcase.css"
 import ReactDOM from "react-dom";
 
-function preloadImages(srcs) {
-  return Promise.all(srcs.map(src => new Promise((resolve) => {
-    const img = new Image();
-    img.src = src;
-    img.onload = resolve;
-    img.onerror = resolve;
-  })));
-}
+const CloudFullRes = `https://res.cloudinary.com/dwrjdndw4/image/upload/f_webp`;
+const CloudShowcase = `https://res.cloudinary.com/dwrjdndw4/image/upload/f_webp,q_auto,w_1000`;
+const CloudCarousel = `https://res.cloudinary.com/dwrjdndw4/image/upload/f_webp,q_auto,w_500`;
 
 export function Image({srcImage, type = "", turnOffClick = false}) {
     const [showingFullScreen, setShowingFullscreen] = useState(false);
+
+    const Cloud = type === 'carousel' ? CloudCarousel : CloudShowcase;
 
     const handleFullScreen = () => {
         if(!turnOffClick){
@@ -25,11 +22,11 @@ export function Image({srcImage, type = "", turnOffClick = false}) {
             {showingFullScreen && ReactDOM.createPortal(
                 <div className="modal-background fi">
                     <div className="clickable-background fi" onClick={() => handleFullScreen()}/>
-                    <img className="full-image" src={srcImage} onClick={() => handleFullScreen()} alt={""}/>
+                    <img className="full-image" src={CloudFullRes + srcImage} onClick={() => handleFullScreen()} alt={""}/>
                 </div>,
                 document.body
             )}
-            <img className={`modal-image ${turnOffClick} ${type}`} onClick={() => handleFullScreen()} src={srcImage} alt={""}/>
+            <img className={`modal-image ${turnOffClick} ${type}`} onClick={() => handleFullScreen()} src={Cloud + srcImage} alt={""}/>
         </>
     );
 }

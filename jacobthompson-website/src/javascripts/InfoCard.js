@@ -17,7 +17,7 @@ export function MobileInfoCards({srcs, toggleModal}){
                     <AboutMeModal turnOffClick={true}/>
                 </div>
             </div>
-            <div className="mobile-title">Projects</div>
+            <div className="mobile-title" style={{marginBottom: '30px'}}>Projects</div>
             {srcs.map((planet, i) => (
                 <MobileInfoCard key={i} src={srcs[i]} handleModal={handleModal}/>
             ))}
