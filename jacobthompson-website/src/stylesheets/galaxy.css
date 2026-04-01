@@ -15,6 +15,21 @@
     transition: transform 0.4s ease;
 }
 
+
+.galaxy-label {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: skewX(30deg) scaleY(2.8) rotate(-0.5deg) translate(-40%,-25%);
+    z-index: 5;
+    padding: 10px 20px;
+    font-weight: bold;
+    font-size: 1.75rem;
+    background-color: rgba(10,10,10,0.75);
+    color: white;
+    border: 2px solid white;
+}
+
 .galaxy-mask {
     position: absolute;
     width: 100%;

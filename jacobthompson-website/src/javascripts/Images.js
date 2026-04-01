@@ -1,3 +1,19 @@
+export function flattenImages(arr) {
+    return arr.reduce((acc, item) => {
+        if (!item) return acc;  // skip undefined/null
+        return acc.concat(Array.isArray(item) ? flattenImages(item) : [item]);
+    }, []);
+}
+
+export function preloadImages(srcs) {
+    return Promise.all(srcs.map(src => new Promise((resolve) => {
+        const img = new Image();
+        img.src = src;
+        img.onload = resolve;
+        img.onerror = resolve;
+    })));
+}
+
 export const PASCImage = `/assets/graphic-work/school-projects/PASCPoster.png`;
 export const DuckImage = `/assets/graphic-work/school-projects/DigitalDuckPoster.png`;
 export const Headshot = `/assets/headshot.png`;

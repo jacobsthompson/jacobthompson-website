@@ -6,6 +6,19 @@ import Modal from "./Modal";
 import {MobileInfoCards} from "./InfoCard";
 import {JTWatermark} from "./Watermark";
 import '../stylesheets/mainpage.css';
+import {
+    preloadImages, flattenImages,
+    DuckImage, EllisTom,
+    Fliers,
+    Headshot,
+    Logos, MoreClients,
+    PASCImage,
+    SocialMedia, StoryWorks,
+    SunsetMediaWave,
+    Thumbnails,
+    ThumbnailShowcase
+} from "./Images";
+
 
 const srcs = [
     ['Daily Dominos', 'assets/planets/planet-Domino.png', 'A mexican train dominos inspired Web Daily Game. Connect all 16 dominos as quickly as possible. Intuitive user interactions, satisfying gameplay, clean UI/UX, and a comprehensive placement validation algorithm make this my best work. Programmed in React and Javascript.', '2026', 'https://dailydominos.com/', 'external', 'Coding'],
@@ -82,11 +95,36 @@ export default function MainPage() {
         setModalSrc(src);
     }
 
+    const [doneLoading, setDoneLoading] = useState(false);
+
+    useEffect(() => {
+        const CloudShowcase = `https://res.cloudinary.com/dwrjdndw4/image/upload/f_webp,q_auto,w_1000`;
+        const CloudCarousel = `https://res.cloudinary.com/dwrjdndw4/image/upload/f_webp,q_auto,w_500`;
+
+        const allImages = flattenImages([
+            PASCImage, DuckImage, Headshot,
+            ...Fliers,
+            ...Thumbnails,
+            ...ThumbnailShowcase,
+            ...Logos,
+            ...SocialMedia,
+            ...SunsetMediaWave,
+            ...StoryWorks,
+            ...EllisTom,
+            ...MoreClients,
+        ]);
+
+        Promise.all([
+            preloadImages(allImages.map(src => CloudShowcase + src)),
+            preloadImages(allImages.map(src => CloudCarousel + src)),
+        ]).then(() => setDoneLoading(true));
+    }, []);
+
     return (
         <div className={`main-page ${isMobile}`}>
             <Header title={"jacob thompson"} subtitle={"web developer"}/>
             <div className={`center-content-container ${(isMobile && window.innerWidth <= 500)}`}>
-                <Galaxy scale={scale} toggleModal={handleToggleModal}/>
+                <Galaxy scale={scale} toggleModal={handleToggleModal} doneLoading={doneLoading}/>
                 <Planets srcPlanets={srcs} toggleModal={handleToggleModal} isPaused={toggleModal} scale={scale}/>
             </div>
             { (isMobile) && (
