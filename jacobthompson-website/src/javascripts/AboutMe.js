@@ -94,8 +94,8 @@ const blankPlanet = 'assets/planets/planet-Blank.png';
 const skillsList = [
     ["React", 'assets/icons/react.svg', "https://react.dev/"],
     ["Javascript", 'assets/icons/javascript.svg', "https://developer.mozilla.org/en-US/docs/Web/JavaScript"],
-    ["HTML", 'assets/icons/html.svg', "https://html.spec.whatwg.org/multipage/"],
-    ["CSS", 'assets/icons/css.svg', "https://html.spec.whatwg.org/multipage/"],
+    ["HTML", 'assets/icons/html.svg', "https://developer.mozilla.org/en-US/docs/Web/HTML"],
+    ["CSS", 'assets/icons/css.svg', "https://developer.mozilla.org/en-US/docs/Web/CSS"],
     ["Python", 'assets/icons/python.svg', "https://www.python.org/doc/"],
     ["Figma", 'assets/icons/figma.svg', "https://www.figma.com/"],
     ["Adobe", 'assets/icons/adobe.svg', "https://www.adobe.com/creativecloud/design.html"],
