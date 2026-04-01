@@ -58,7 +58,8 @@
     width: 40%;
     max-width: 14rem;
     float: right;
-    margin: 0 0 1rem 2rem;
+    margin-bottom: 1rem;
+    margin-left: 2rem;
 }
 
 .photo-wrapper {
@@ -126,6 +127,7 @@
 
 .skill-icon-wrapper {
     position: relative;
+    -webkit-touch-callout: none;
 }
 
 .skill-icon {

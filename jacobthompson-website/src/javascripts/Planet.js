@@ -54,6 +54,7 @@ function Planet({planetCount, src, orbitRadius, delayIndex, size = 100, isPaused
         <div>
             <div className="planet-container"
                  onDragStart={preventDragHandler}
+                 onContextMenu={preventDragHandler}
                  style={{
                      animationName: 'orbit',
                      animationDuration: `${duration}s`,

@@ -54,7 +54,7 @@ export function Carousel({images, title, speed, openShowcase}) {
     return (
         <div className="carousel-wrapper" onClick={() => openShowcase(images, title)}>
             <div className="carousel-overlay">
-                <div className="modal-title">{title}</div>
+                <div className="carousel-title">{title}</div>
             </div>
             <div className="carousel-track" style={{animation: `carousel-scroll ${speed}s linear infinite`}}>
                 {images.map((image, i) => renderCarouselImage(image, i))}

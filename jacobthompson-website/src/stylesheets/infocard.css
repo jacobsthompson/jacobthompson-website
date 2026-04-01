@@ -70,6 +70,7 @@
     height: 2rem;
     filter: invert(100%);
     transition: transform 0.3s ease;
+    -webkit-touch-callout: none;
 }
 
 /*MOBILE INFO CARDS*/
@@ -84,9 +85,9 @@
 
 .mobile-info-wrapper {
     display: block;
-    align-items: center;
     width: 90vw;
-    min-width: 300px;
+    max-width: 600px;
+    min-width: 200px;
     height: fit-content;
     min-height: 200px;
     background-color: rgba(10,10,10,0.9);

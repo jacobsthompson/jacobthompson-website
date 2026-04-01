@@ -1,12 +1,11 @@
 import {useState, useEffect} from "react";
 import Galaxy from "./Galaxy";
-import Stars from "./Stars";
 import Header from "./Header";
 import Planets from "./Planet";
 import Modal from "./Modal";
 import {MobileInfoCards} from "./InfoCard";
-import '../stylesheets/mainpage.css';
 import {JTWatermark} from "./Watermark";
+import '../stylesheets/mainpage.css';
 
 const srcs = [
     ['Daily Dominos', 'assets/planets/planet-Domino.png', 'A mexican train dominos inspired Web Daily Game. Connect all 16 dominos as quickly as possible. Intuitive user interactions, satisfying gameplay, clean UI/UX, and a comprehensive placement validation algorithm make this my best work. Programmed in React and Javascript.', '2026', 'https://dailydominos.com/', 'external', 'Coding'],
@@ -32,7 +31,21 @@ const mobileSrcs = [
     srcs[8]
 ];
 
-const starRandomizedValue = new Date().toString();
+
+function isMobileDevice() {
+    const hasCoarsePointer = window.matchMedia("(pointer: coarse)").matches;
+    const mobileUA = /android|iphone|ipad|ipod|blackberry|iemobile|opera mini/i.test(navigator.userAgent);
+
+    const isIPadSafari = /macintosh/i.test(navigator.userAgent) && navigator.maxTouchPoints > 1;
+
+    const isDesktopUA = /windows nt|macintosh|linux x86_64/i.test(navigator.userAgent)
+        && !/android|iphone|ipad/i.test(navigator.userAgent)
+        && !isIPadSafari;
+
+    if (isDesktopUA) return false;
+
+    return hasCoarsePointer || mobileUA || isIPadSafari;
+}
 
 function usePageScale(maxWidth = 1663, maxHeight = 860, minWidth = 320, minHeight = 320, minScale = 0.325){
     const [scale, setScale] = useState(1);
@@ -62,13 +75,7 @@ export default function MainPage() {
     const [modalSrc, setModalSrc] = useState(null);
     const scale = usePageScale();
 
-    const [safariMobileView, setSafariMobileView] = useState(500);
-
-    useEffect(() => {
-        const userAgent = navigator.userAgent;
-        const isSafari = /^((?!chrome|android).)*safari/i.test(userAgent);
-        if(isSafari) setSafariMobileView(574);
-    }, []);
+    const [isMobile, setIsMobile] = useState(isMobileDevice());
 
     const handleToggleModal = (src) => {
         setToggleModal(!toggleModal);
@@ -76,19 +83,18 @@ export default function MainPage() {
     }
 
     return (
-        <div className="main-page">
+        <div className={`main-page ${isMobile}`}>
             <Header title={"jacob thompson"} subtitle={"web developer"}/>
-            <div className="center-content-container">
+            <div className={`center-content-container ${(isMobile && window.innerWidth <= 500)}`}>
                 <Galaxy scale={scale} toggleModal={handleToggleModal}/>
                 <Planets srcPlanets={srcs} toggleModal={handleToggleModal} isPaused={toggleModal} scale={scale}/>
             </div>
-            { window.innerWidth <= safariMobileView && (
+            { (isMobile) && (
                 <div className="mobile-projects">
                     <MobileInfoCards srcs={mobileSrcs} toggleModal={handleToggleModal}/>
                 </div>
             )}
             <Modal src={modalSrc} toggleModal={handleToggleModal} toggled={toggleModal}/>
-            <Stars count={500} randomizer={starRandomizedValue}/>
             <JTWatermark/>
         </div>
     );

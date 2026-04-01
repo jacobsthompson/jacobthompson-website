@@ -9,31 +9,34 @@
     text-align: center;
     color: white;
 
-    overflow-y: scroll;
+    overflow-y: visible;
     overflow-x: hidden;
+}
+
+.main-page.true{
+    height: 80vh;
+    padding-bottom: 200px;
 }
 
 .center-content-container {
     min-width: 100vw;
     height: 100vh;
-    min-height: 50vh;
+    min-height: min-content;
     position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
     z-index: 1;
 
+    padding: 1rem 0 1rem 0;
+
     transform-origin: center;
+}
+
+.center-content-container.true {
+    height: 40vh;
 }
 
 .mobile-projects {
     z-index: 10;
-}
-
-@media screen and (max-width: 500px) and (max-height: 800px){
-    .main-page{
-        height: 80vh;
-        padding-bottom: 1000px;
-        align-self: start;
-    }
 }

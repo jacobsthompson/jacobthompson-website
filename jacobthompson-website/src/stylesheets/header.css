@@ -66,6 +66,7 @@
 .icon-wrapper {
     width: 4rem;
     height: 1.5rem;
+    -webkit-touch-callout: none;
 }
 
 .icon {
@@ -102,3 +103,9 @@
     from { opacity: 1; font-size: 1rem; }
     to { opacity: 0; font-size: 0; }
 }
+
+/*@media screen and (max-width: 500px){*/
+/*    .header-container{*/
+/*        padding-bottom: 20px;*/
+/*    }*/
+/*}*/
